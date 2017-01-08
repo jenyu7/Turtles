@@ -1,0 +1,13 @@
+Animals 
+1. Bonnie the Bear
+  - Predator
+  - 20 hit points
+  - 20% chance of spawn
+2. Zoey the Zebra
+  - Prey 
+  - 2 catch points
+  - 15% chance of spawn 
+3. Rachel the Rabbit
+  - Prey
+  - 1 catch point
+  - 60% chance of spawn 
