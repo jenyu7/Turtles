@@ -1,0 +1,15 @@
+MVP: 
+- Make El Cazador with NO GRID
+- Three predators: Bonnie, Patricia, Masha
+- Three prey: Zoey, Rachel, Dasha
+- 100 hit points
+- No spawn percentage (yet) 
+- ONLY 9X9 GRID
+- Wrangle with cs1.Keyboard.java
+
+Allard:
+- 2D Array of coordinates and mechanism to update it
+Eugene: 
+- Populate the hunting ground
+Jen:
+- User Input reading (how to catch animals) 
