@@ -1,4 +1,10 @@
 public class Grid{
+	
+	/*
+ -I had the Grid be an Object of a class and the stuff inside of it be the elements of the Object[][] variable called _grid. 
+ -The sideLength variable lets us adjust the grid's dimensions (it can only be a square though!)
+ -toString() should probably print the Grid itself, not the array, so this may need some work 
+	*/
 
     private Object[][] _grid;
     private int sideLength;
