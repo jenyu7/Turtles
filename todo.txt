@@ -1,4 +1,4 @@
-MVP: 
+MVP (1/12): 
 - Make El Cazador with NO GRID
 - Three predators: Bonnie, Patricia, Masha
 - Three prey: Zoey, Rachel, Dasha
@@ -12,5 +12,5 @@ Allard:
 Eugene: 
 - Populate the hunting ground
 Jen:
-- User Input reading (how to catch animals) 
+- User Input reading (how to catch animals) and opening grids
 - Classes for animals
