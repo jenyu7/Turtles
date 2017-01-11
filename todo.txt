@@ -7,6 +7,26 @@ MVP (1/12):
 - ONLY 9X9 GRID
 - Wrangle with cs1.Keyboard.java
 
+Gridded Version (1/16): 
+- Add graphic grids
+- Add spawn possibilities
+- Decrease Health to 60 
+- Wrangle with 16x16
+- Add Storyline
+- Debug MVP
+
+Stretching Version (1/20):
+- Make Commands within the game
+- Ability to flag possible predator habitats
+- Increased Graphics
+- Debug Debug Debug Debug
+
+Afterward:
+- Debug 
+- Debug
+- Debug 
+
+Current Tasks~
 Allard:
 - 2D Array of coordinates and mechanism to update it
 Eugene: 
