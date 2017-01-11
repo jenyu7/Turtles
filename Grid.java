@@ -27,20 +27,15 @@ public class Grid{
     }
     
     public Object getCor (int xcor, int ycor){//returns the element at (x,y)
-	return _grid[sideLength - ycor][xcor - 1];
+	//return _grid[sideLength - ycor][xcor - 1];
+	return _grid[ycor - 1][xcor - 1];    
     } 
 
     public Object setCor (int xcor, int ycor, Object o){//sets the element at (x,y) on the grid to be o, and returns the original element
 	Object temp = getCor(xcor, ycor);
-	_grid[sideLength - ycor][xcor - 1] = o;
+	//_grid[sideLength - ycor][xcor - 1] = o;
+	_grid[ycor - 1][xcor - 1] = o;    
 	return temp;
-    }
-    
-    public static void main(String[] args){//tests
-	Grid foo = new Grid(5);
-	System.out.println(foo.getSideLength());
-	System.out.println(foo.getArray());
-        System.out.print(foo.getCor(2,3));	
     }
 			    
 }
