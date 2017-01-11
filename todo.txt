@@ -1,3 +1,6 @@
+Period 3
+Turtles
+Jennifer Yu, Eugene Thomas, Allard Peng
 MVP (1/12): 
 - Make El Cazador with NO GRID
 - Three predators: Bonnie, Patricia, Masha
