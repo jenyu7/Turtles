@@ -1,6 +1,6 @@
 // Abstract Character Class 
 
-public abstract class Character () { 
+public abstract class Character { 
 
 	// Instance Variables: 
 	
@@ -18,7 +18,7 @@ public abstract class Character () {
 	// Methods: 
 
 	// Actual Version: 
-	public abstract void editStr(); 
+	// public abstract void editStr(); 
 	
 	// MVP Version: 
 	public abstract String toString(); 

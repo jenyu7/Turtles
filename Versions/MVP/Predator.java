@@ -1,18 +1,22 @@
 // Predator: A Subclass for Character
 
-public class Predator implements Character () { 
+import java.util.ArrayList; 
+
+public class Predator extends Character { 
 
 	// Instance Variables: 
-    String[] names = new String[3];
+    ArrayList<String> names = new ArrayList<String>(); { 
+	names.add("Jen the Jaguar");
+	names.add("Zoey the Zebra");
+	names.add("Bonnie the Bear"); 
+} 
+
 	public int damage; 
-	
-	// Name Array: 
-	names = ["Bonnie the Bear", "Jen the Jaguar", "Allard the Alpaca"];
 	
 	// Default Constructor 
 	public Predator() { 
 		int randInt = (int) (Math.random()*3); 
-		name = names[randInt]; 
+		name = names.get(randInt); 
 		damage = 10; 
 	}
 
