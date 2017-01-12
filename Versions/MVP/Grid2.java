@@ -94,7 +94,10 @@ public class Grid2 {
 		
 		Grid2 TBM = new Grid2(4); 
 		populate(TBM); 
-		
+		System.out.println();
+		System.out.println(TBM.getSideLength()); 
+		System.out.println(TBM.getCor(1,1)); 
+		System.out.println(TBM.getCor(3,4)); 
 	}
 				
 				
