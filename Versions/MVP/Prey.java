@@ -1,17 +1,21 @@
 // The Prey Class that implements character as well 
 
-public class Prey implements Character () { 
+
+import java.util.ArrayList; 
+
+public class Prey extends Character { 
 
 	// Instances: 
 	public int CP; 
-	String names = new String[3];
-	
-	// Name Array: 
-	names = ["Eugene the Iguana", "Rachel the Rabbit", "Sarah the Squirrel"];
+	ArrayList<String> names = new ArrayList<String>(); {
+	names.add("Eugene the Iguana"); 
+	names.add("Rachel the Rabbit"); 
+	names.add("Sarah the Squirrel"); 
+	}
 	
 	public Prey () {
 		int randInt = (int) (Math.random()*3); 
-		name = names[randInt]; 
+		name = names.get(randInt); 
 		CP = 2; 
 	} 
 	
