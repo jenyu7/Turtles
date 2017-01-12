@@ -2,7 +2,7 @@
 
 import java.util.ArrayList; 
 
-public class Predator extends Character { 
+public class Predator extends Animal { 
 
 	// Instance Variables: 
     ArrayList<String> names = new ArrayList<String>(); { 
