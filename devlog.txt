@@ -1,10 +1,10 @@
-<Team Name>
-<Member 0 Name>
-<Member 1 Name>
-<Member 2 Name>
-pd <pd#>
+Turtles
+Jen Yu 
+Eugene Thomas
+Allard Pend
+pd 3
 ---------------------
-<Project>
+El Cazador
 
 
 Suggested usage:
@@ -41,6 +41,7 @@ wow! oo!...
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 we changed ___ to ___ bc...
+- Changed from empty square to the "ghost" concept, back to creating an array storing # of predators/prey around a box
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
