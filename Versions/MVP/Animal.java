@@ -3,8 +3,6 @@
 public abstract class Animal { 
 
 	// Instance Variables: 
-	
-	// The stuff thats currently commented is for the actual version: 
 	protected int numPreds; 
 	protected int numPreys; 
 	protected double spawn; 
