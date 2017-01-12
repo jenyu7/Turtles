@@ -9,7 +9,7 @@ public class Grid2 {
 	-made numPrey and numPredators vars that's for altering numbers of each type of animal-- not really in MVP, just had it there cuz why not 
 	*/
 
-    private Character[][] _grid;
+    private Animal[][] _grid;
     public int sideLength;
 	private int[] coords; 
     //private int numPrey = 20; //these numbers should be adjusted later
@@ -17,7 +17,7 @@ public class Grid2 {
 
     public Grid2 (int s){//constructor: s is the side length of grid 
 		sideLength = s; 
-        _grid = new Character[sideLength][sideLength];
+        _grid = new Animal[sideLength][sideLength];
 	    coords = new int[s*s];
     }
 	
@@ -28,17 +28,17 @@ public class Grid2 {
 			for (int j = 0; j < s.sideLength; j++) { 
 				int rand = (int) (Math.random()*3); 
 				if (rand == 0) {
-					Character a = new Empty(); 
+					Animal a = new Empty(); 
 					s._grid[i][j] = a; 
 					System.out.println(a);
 				}
 				else if (rand == 1) { 
-					Character b = new Predator();
+					Animal b = new Predator();
 					s._grid[i][j] = b; 
 					System.out.println(b);
 				}
 				else { 
-					Character c = new Prey(); 
+					Animal c = new Prey(); 
 					s._grid [i][j] = c; 
 					System.out.println(c);
 				}
@@ -98,27 +98,5 @@ public class Grid2 {
 		System.out.println(TBM.getSideLength()); 
 		System.out.println(TBM.getCor(1,1)); 
 		System.out.println(TBM.getCor(3,4)); 
-	}
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-								
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+	}	
 } 

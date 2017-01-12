@@ -1,9 +1,9 @@
-// The Prey Class that implements character as well 
+// The Prey Class that implements Animal as well 
 
 
 import java.util.ArrayList; 
 
-public class Prey extends Character { 
+public class Prey extends Animal { 
 
 	// Instances: 
 	public int CP; 
@@ -16,7 +16,7 @@ public class Prey extends Character {
 	public Prey () {
 		int randInt = (int) (Math.random()*3); 
 		name = names.get(randInt); 
-		CP = 2; 
+		CP = 1; 
 	} 
 	
 	public int getCP () {

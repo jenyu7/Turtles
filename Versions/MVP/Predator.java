@@ -23,9 +23,7 @@ public class Predator extends Animal {
 	public int getDamage () { 
 		return damage; 
 	}
-	
-		
-	// Rewrite this later to reveal info about numPreds and numPrey.
+		// Rewrite this later to reveal info about numPreds and numPrey.
 	public String toString() { 
 		return name; 
 	}
