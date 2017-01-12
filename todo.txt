@@ -3,8 +3,8 @@ Turtles
 Jennifer Yu, Eugene Thomas, Allard Peng
 MVP (1/12): 
 - Make El Cazador with NO GRID
-- Three predators: Bonnie, Patricia, Masha
-- Three prey: Zoey, Rachel, Dasha
+- Three predators: Bonnie, Dasha, Masha
+- Three prey: Zoey, Rachel, Patricia
 - 100 hit points
 - No spawn percentage (yet) 
 - ONLY 9X9 GRID
