@@ -72,9 +72,14 @@ public class Woo{
 	
 	//The next step after asking
 	//Looks into the coordinates USER has chosen on the grid
-	/*
-	
-	*/
+	/*====
+	Three options: 
+	1. Hit a Prey (+1 CP)
+	2. Hit a Predator (-10 HP)
+	3. Hit nothing (an empty)
+		a. There are predators and prey near you (Display how many predators, and how many prey)
+		b. There is nothing near you. (Display this sad, sad fact. Maybe it's because you smell.)
+	====*/
 	public void checkGrid(int xcor, int ycor){
 		Object a = g.getArray()[ycor][xcor];
 		if (a instanceof Prey){
@@ -227,6 +232,7 @@ public class Woo{
 		}
 	}
 	
+	//Where the magic haPPENS
 	public static void main(String[] args){
 		Woo w = new Woo();
 		while (w.checkStatus() == 0){
