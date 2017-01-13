@@ -9,7 +9,7 @@ public class Predator extends Animal {
 	names.add("Jen the Jaguar");
 	names.add("Zoey the Zebra");
 	names.add("Bonnie the Bear"); 
-} 
+	} 
 
 	public int damage; 
 	
