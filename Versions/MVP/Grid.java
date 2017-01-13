@@ -24,6 +24,18 @@ public class Grid {
 		initPopulateUsed();
     }
 	
+	//toString() method
+	public String toString(){
+		String retStr = "";
+		for (Animal[] a : _grid){
+			for (Animal b: a){
+				retStr += b + "       ";
+			}
+			retStr += "\n";
+		}
+		return retStr;
+	}
+	
 	//ACCESSORS
 	//Returns sidelength of hunting grounds
 	public int getSideLength(){
@@ -98,5 +110,10 @@ public class Grid {
 				_usedCors[i][j] = a;
 			}
 		}
+	}
+	public static void main(String[] args){
+		Grid a = new Grid(5);
+		populate(a);
+		System.out.println(a);
 	}
 } 
