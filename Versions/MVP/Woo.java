@@ -8,11 +8,12 @@ public class Woo{
 	private Cazador kats;
 	private InputStreamReader isr;
     private BufferedReader in;
+	int numPrey;
 	
 	//Constructor
 	public Woo(){
 		g = new Grid(9);
-		Grid.populate(g);
+		numPrey = Grid.populate(g);
 		isr = new InputStreamReader( System.in );
 		in = new BufferedReader( isr );
 		newGame();
@@ -56,6 +57,7 @@ public class Woo{
 				//System.out.println("in");
 				g.setUsedCors(xcor-1, ycor-1, 0);
 				/* ***IMPORTANT***: BELOW, THE MODIFICATION TO INDICES HAS ALREADY BEEN MADE, SO CHECKGRID() DOES NOT NEED TO SUBTRACT ONE TO STAY WITHIN BOUNDS*/
+				System.out.println("Coordinates: " + xcor + "," + ycor);
 				checkGrid(xcor-1, ycor-1);
 			}
 		}
@@ -90,20 +92,77 @@ public class Woo{
 			System.out.println("Current Health: " + kats.getHP());
 		}
 		else{
-			if (specialCaseBoo)
+			//Special Cases: On the Corners (3 neighbors) or On the Edges (5 neighbors)
+			if (specialCaseBoo(xcor, ycor)){
+				//Coordinates: 0,0 [USER: 1,1]
+				if ((xcor == 0 ) && (ycor == 0)){
+					int[] p = {xcor, xcor+1};
+					int[] q = {ycor, ycor+1};
+					checkSurround(p, q);
+				}
+				//Coordinates: 0,8 [USER: 1,9]
+				else if ((xcor == 0 ) && (ycor == g.getSideLength()-1)){
+					int p[] = {xcor, xcor+1};
+					int q[] = {ycor-1, ycor};
+					checkSurround(p, q);
+				}
+				//Coordinates: 8,0 [USER: 9,1]
+				else if ((xcor == g.getSideLength()-1 ) && (ycor == 0)){
+					int p[] = {xcor-1, xcor};
+					int q[] = {ycor+1, ycor};
+					checkSurround(p, q);
+				}
+				//Coordinates: 8,8 [USER: 9,9]
+				else if ((xcor == g.getSideLength()-1) && (ycor == g.getSideLength()-1)){
+					int p[] = {xcor-1, xcor};
+					int q[] = {ycor-1, ycor};
+					checkSurround(p, q);
+				}
+				//Coordinates: Anything on x = 0 [USER: x = 1] excluding the corners 
+				else if (xcor == 0 ){
+					int p[] = {xcor+1, xcor};
+					int q[] = {ycor-1, ycor, ycor+1};
+					checkSurround(p, q);
+				}
+				//Coordinates: Anything on x = 8 [USER: x = 9] excluding the corners
+				else if (xcor == g.getSideLength()-1){
+					int p[] = {xcor-1, xcor};
+					int q[] = {ycor-1, ycor, ycor +1};
+					checkSurround(p, q);
+				}
+				//Coordinates: Anything on y = 0 [USER: y = 1] excluding the corners
+				else if (ycor == 0){
+					int p[] = {xcor-1, xcor, xcor+1};
+					int q[] = {ycor+1, ycor};
+					checkSurround(p, q);
+				}
+				//Coordinates: Anything on y = 8 [USER: y = 9] excluding the corners
+				else if (ycor == g.getSideLength()-1){
+					int p[] = {xcor-1, xcor, xcor+1};
+					int q[] = {ycor-1, ycor};
+					checkSurround(p, q);
+				}
+				else{}
+			}
+			//Regular Case: 8 neighbors
+			else{
+				int[] p = {xcor-1, xcor, xcor +1};
+				int[] q = {ycor-1, ycor, ycor +1};
+				checkSurround(p, q);
+				
+			}
 		}
 	}
 	
-	//HELPER FUNCTIONS:
-	
-	//checkBox: Checks the specific box based on coordinates
-	//Helps when the function is called on the coordinates of surrounding boxes
-	public int checkBox(int xcor, int ycor){
-		Object a = g.getArray()[ycor][xcor];
-		if (a instanceof Prey){
+	//Checks the current status of the game
+	//Two ways to exit the game: 
+	//1. Win!: When you catch all the prey
+	//2. Lose...: When you lose all your health
+	public int checkStatus(){
+		if (kats.getCP() == numPrey){
 			return 1;
 		}
-		else if (a instanceof Predator){
+		else if (kats.getHP() == 0){
 			return -1;
 		}
 		else{
@@ -111,14 +170,73 @@ public class Woo{
 		}
 	}
 	
+	//HELPER FUNCTIONS:
+	
 	//specialCaseBoo: Returns boolean on whether or not the square is a special case (has less than 8 neighbors)
 	//Helps improve readability of code 
-	public boolean specialCaseBoo()
+	public boolean specialCaseBoo(int xcor, int ycor){
+		if (((xcor == 0) || (ycor == 0)) || ((xcor == g.getSideLength()-1) || (ycor == g.getSideLength()-1))){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	//checkBox: Checks the specific box based on coordinates
+	//Helps when the function is called specifically on the coordinates of surrounding boxes
+	public int checkBox(int xcor, int ycor){
+		Object a = g.getArray()[ycor][xcor];
+		if (a instanceof Prey){
+			//System.out.println(a);
+			return 1;
+		}
+		else if (a instanceof Predator){
+			//System.out.println(a);
+			return -1;
+		}
+		else{
+			//System.out.println(a);
+			return 0;
+		}
+	}
+	
+	//checkSurround: The Big Sister of checkBox. Robustification is not writing the same code more than once. 
+	//Takes in two arrays with possible x and y cors, and then runs through it with a nested for loop for all possible combinations. Prints out the number of Predators and Prey around you. 
+	public void checkSurround(int[] p, int[] q){
+		int numPrey = 0;
+		int numPred = 0;
+		for (int i: p){
+			for (int j:q){
+				if (checkBox(i, j) == 1){
+					numPrey ++;
+				}
+				else if (checkBox(i, j) == -1){
+					numPred ++;
+				}
+				else{
+				}
+			}
+		}
+		if ((numPrey == 0) && (numPred == 0)){
+					System.out.println("There are no predators or prey around you.");
+			}
+		else{
+			System.out.println("Number of Prey around: " + numPrey);
+			System.out.println("Number of Predators around: " + numPred);
+		}
+	}
 	
 	public static void main(String[] args){
 		Woo w = new Woo();
-		while (true){
+		while (w.checkStatus() == 0){
 			w.ask();
+		}
+		if (w.checkStatus() == 1){
+			System.out.println("You won!");
+		}
+		else{
+			System.out.println("You lost!");
 		}
 		
 	}

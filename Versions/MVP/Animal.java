@@ -6,8 +6,6 @@ public abstract class Animal {
 	protected int numPreds; 
 	protected int numPreys; 
 	protected double spawn; 
-	protected String displayStr = ""; 
-	protected String retStr; 
 	
 	// MVP Stuff: 
 	protected String name; 
