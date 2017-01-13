@@ -2,33 +2,45 @@
 
 public class Cazador { 
 	
-	public int HP; 
-	public int CatchPoints; 
-	public int winOrLose; // -1: Lose / 0: In the middle of the game / 1: Win
-	// public String name; to personalize player 
+	private int HP; 
+	private int catchPoints; 
+	private int status; // -1: Lost / 0: In the middle of the game / 1: Won
+	private String nombre; 
 	
-	public Cazador () { 
-		// include name later
+	//Constructor
+	public Cazador (String name) { 
+		nombre = name;
 		HP = 100; 
-		winOrLose = 0; 
-		CatchPoints = 0; 
+		status = 0; 
+		catchPoints = 0; 
 	}
 	
+	//ACCESSORS
+	//Returns current HP value
 	public int getHP() { 
 		return HP; 
 	}
 	
-	public void setHP (Predator preddy) { 
-		HP -= preddy.damage; 
-	}
-	
+	//Returns current number of catches
 	public int getCP () { 
-		return CatchPoints; 
+		return catchPoints; 
 	}
 	
-	public void SetCP (Prey pray) { 
-		CatchPoints += pray.CP; 
+	public int getStatus(){
+		return status;
 	}
+	
+	//MUTATORS
+	//Updates the HP (When a predator attacks)
+	public void setHP (int p) { 
+		HP -= p; 
+	}
+	
+	//Updates the catch points
+	public void setCP (int p) { 
+		catchPoints += p; 
+	}
+
 	
         
 } 
