@@ -1,11 +1,7 @@
-// The Prey Class that implements Animal as well 
-
-
 import java.util.ArrayList; 
-
 public class Prey extends Animal { 
 
-	// Instances: 
+	//Names and Stories
 	public int CP; 
 	ArrayList<String> names = new ArrayList<String>(); {
 	names.add("Eugene the Iguana"); 
@@ -13,18 +9,22 @@ public class Prey extends Animal {
 	names.add("Sarah the Squirrel"); 
 	}
 	
+	//Constructor
 	public Prey () {
 		int randInt = (int) (Math.random()*3); 
 		name = names.get(randInt); 
 		CP = 1; 
 	} 
 	
-	public int getCP () {
-		return CP; 
-	}
-	
-	// Rewrite this later to reveal info about numPreds and numPrey. 
+	//Returns the name of the Prey
 	public String toString() {
 		return name; 
 	}
+	
+	//ACCESSORS
+	//Get catchPoints
+	public int getCP () {
+		return CP; 
+	}
+	 
 }

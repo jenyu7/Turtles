@@ -1,10 +1,9 @@
-// The selector's class. 
-
 public class Cazador { 
 	
+	//Declare Variables
 	private int HP; 
 	private int catchPoints; 
-	private int status; // -1: Lost / 0: In the middle of the game / 1: Won
+	private int status;
 	private String nombre; 
 	
 	//Constructor
@@ -26,6 +25,7 @@ public class Cazador {
 		return catchPoints; 
 	}
 	
+	//Returns current status: 1 = won, 0 = in game, -1 = lost
 	public int getStatus(){
 		return status;
 	}
