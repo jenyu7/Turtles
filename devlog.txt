@@ -47,12 +47,42 @@ LESSONS LEARNED
    \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
-
-
-yyyy-mm-dd
+**Detailed Devlog begins 1/12. If any of you (Eugene, Allard) 
+want to expand below, feel free to. I'll just speak for myself.
+01-12-17
 --------------------------------------------------------------
+JY: 
+- Edited Animal.java, Prey.java, Empty.java (overloaded), 
+Predator.java, Cazador.java. Removed certain methods and changed
+signatures. Everything is denoted in comments in code. 
+- Wrote Woo.java, the driver file. It is very long, but also 
+thorough. Should be pretty clean. Check it out, comments are
+inside the code for comprehension. 
+- Tidied up all .java files: added comments, fixed formatting,
+other things that trigger my strange OCD. 
 
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+01-11-17
+--------------------------------------------------------------
+Creation of: 
+Empty.java; Animal.java; Prey.java; Predator.java; populate 
+method for Grid; You.java (deleted); Grid2.java (ET)
+Creation of: 
+Cazador.java (JY)
+Creation of: 
+Grid.java (AP)
+
+
+01-10-17
+--------------------------------------------------------------
+Worked on Flowchart (JY)
+Grid.java (AP)
+
+01-09-17
+--------------------------------------------------------------
+Worked on UML Diagram (ET, AP)
+
+01-08-17
+--------------------------------------------------------------
+Worked on Project Proposal (JY)
+
 ==============================================================
