@@ -1,53 +1,42 @@
 Turtles
 Jen Yu 
 Eugene Thomas
-Allard Pend
+Allard Peng
 pd 3
 ---------------------
 El Cazador
-
-
-Suggested usage:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+- There were issues with methods being static and nonstatic, which were fixed by instantiation. 
+- At first, we were unclear on our vision of how to code the driver. Using a Grid object was a given, but what we mainly debated over was the usage of an object vs. a 2D Array in order to represent the empty spaces in the Grid. In the end, we settled on the object, because it was easier to assign attributes, instance variables, and use instaceOf to determine what it was. 
+- What should be in an MVP? We discussed this, about what aspects were necessary and what weren't. In the end, we decided that the physical Grid parts and the parts where empty squares with no predators/prey around them were not necessary towards functionality, and were best wrangled with later. 
+- Arguments about superclasses vs. interfaces. In the end, we decided to use the Animal superclass and not define each individual animal in a class, but rather spawn either a Predator or a Prey. Both Predator and Prey are subclasses of Animal, so when the driver is run and the grid is created, one variable type takes care of both of these objects. 
+- Time Management. Early on, we split up the work, but some of the kinks hadn't been worked out yet, so we fell a little behind. However. this project in its MVP version should work fine. 
+- Was criticized by Konstatinovich for having a public variable. Made all variables either private or protected out of shame. In order to retain access, wrote Accessor and Mutator methods. [Jen]
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+- @Eugene: What is coord??
+- How to display the Grid (String manipulation >:( )
+- Opening more squares aghh
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+- 2D Arrays suck
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
 - Changed from empty square to the "ghost" concept, back to creating an array storing # of predators/prey around a box
+  - ANDDD changed back to the object, now named Empty
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
-||||||||||||||||||||||||||||||||||||||||||
-
+- noSleep CS = new noSleep();
+- noSleep instanceOf FatigueAndPain
+- FatigueAndPain extends WhyIDoDis
 
 
  ______   ______   __   __   __       ______   _______
@@ -62,6 +51,7 @@ tales of wisdom gained...
 
 yyyy-mm-dd
 --------------------------------------------------------------
+
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
