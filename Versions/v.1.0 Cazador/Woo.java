@@ -102,13 +102,13 @@ public class Woo{
 			if (specialCaseBoo(xcor, ycor)){
 				//Coordinates: 0,0 [USER: 1,1]
 				if ((xcor == 0 ) && (ycor == 0)){
-					int[] p = {xcor, xcor+1};
-					int[] q = {ycor, ycor+1};
+					int[] p = {xcor+1, xcor};
+					int[] q = {ycor+1, ycor};
 					checkSurround(p, q);
 				}
 				//Coordinates: 0,8 [USER: 1,9]
 				else if ((xcor == 0 ) && (ycor == g.getSideLength()-1)){
-					int p[] = {xcor, xcor+1};
+					int p[] = {xcor+1,xcor};
 					int q[] = {ycor-1, ycor};
 					checkSurround(p, q);
 				}
@@ -226,7 +226,7 @@ public class Woo{
 		if ((numPrey == 0) && (numPred == 0)){
 				for (int w:p){
 					for (int l:q){
-						if ((w == p[1]) && (l == q[1])){
+						if ((w == p[0]) && (l == q[0])){
 							
 						}
 						else{checkGrid(w, l);}
