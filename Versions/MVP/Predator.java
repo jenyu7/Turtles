@@ -9,7 +9,15 @@ public class Predator extends Animal {
 	names.add("Jen the Jaguar");
 	names.add("Zoey the Zebra");
 	names.add("Bonnie the Bear"); 
+	names.add("Dasha the Dartfrog");
+	names.add("Masha the Mammoth");
+	names.add("Yiling the Yak");
+	names.add("Cody the Crocodile");
 	} 
+	
+	ArrayList<String> stories = new ArrayList<String>();{
+		
+	}
 	
 	//Default Constructor 
 	public Predator() { 

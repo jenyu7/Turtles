@@ -4,9 +4,17 @@ public class Prey extends Animal {
 	//Names and Stories
 	public int CP; 
 	ArrayList<String> names = new ArrayList<String>(); {
-	names.add("Eugene the Iguana"); 
+	names.add("Ida the Iguana"); 
 	names.add("Rachel the Rabbit"); 
-	names.add("Sarah the Squirrel"); 
+	names.add("Jessica the Jellyfish"); 
+	names.add("Patricia the Pangolin");
+	names.add("Eugene the Egret");
+	names.add("Allard the Armadillo");
+	names.add("Jenn the Jackrabbit");
+	}
+	
+	ArrayList<String> stories = new ArrayList<String>();{
+		
 	}
 	
 	//Constructor
