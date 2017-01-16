@@ -16,12 +16,14 @@ OBSTACLES OVERCOME
 - Arguments about superclasses vs. interfaces. In the end, we decided to use the Animal superclass and not define each individual animal in a class, but rather spawn either a Predator or a Prey. Both Predator and Prey are subclasses of Animal, so when the driver is run and the grid is created, one variable type takes care of both of these objects. 
 - Time Management. Early on, we split up the work, but some of the kinks hadn't been worked out yet, so we fell a little behind. However. this project in its MVP version should work fine. 
 - Was criticized by Konstatinovich for having a public variable. Made all variables either private or protected out of shame. In order to retain access, wrote Accessor and Mutator methods. [Jen]
+- Could not access some mutators and accessors. Fixed by TYPECASTING!! 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - @Eugene: What is coord??
 - How to display the Grid (String manipulation >:( )
 - Opening more squares aghh
+    - how to escape this forever loop???
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,6 +51,30 @@ LESSONS LEARNED
 ==============================================================
 **Detailed Devlog begins 1/12. If any of you (Eugene, Allard) 
 want to expand below, feel free to. I'll just speak for myself.
+
+01-15-17
+--------------------------------------------------------------
+JY: 
+- Was trying to debug the surround squares
+- Added mechanism of printing stories when either prey or predators are caught
+- Added new ArrayList<Integer> damages to Predator class
+- Added mechanism of personalized damages based on the type of predator spawned
+
+01-14-17
+--------------------------------------------------------------
+JY: 
+- Final List of Predators: Jen the Jaguar, Zoey the Zebra, Bonnie the Bear, Dasha the Dartfrog, Masha the Mammoth, Yiling the Yak, Cody the Crocodile
+- Final List of Prey: Ida the Iguana, Rachel the Rabbit, Jessica the Jellyfish, Patricia the Pangolin, Eugene the Egret, Allard the Armadillo, Jenn the Jackrabbit
+- Completed stories ArrayList<String> READ THE PREY AND PREDATOR FILES TO SEE THE STORIES
+
+01-13-17
+--------------------------------------------------------------
+JY: 
+- Edited comments in code
+- Began work on creating the storyline of the game
+- Added new ArrayList<String> stories to both Predator and Prey
+- Uploaded most recent flowchart made with draw.io
+
 01-12-17
 --------------------------------------------------------------
 JY: 
@@ -63,26 +89,30 @@ other things that trigger my strange OCD.
 
 01-11-17
 --------------------------------------------------------------
-Creation of: 
+ET: 
 Empty.java; Animal.java; Prey.java; Predator.java; populate 
 method for Grid; You.java (deleted); Grid2.java (ET)
-Creation of: 
-Cazador.java (JY)
-Creation of: 
-Grid.java (AP)
+JY: 
+Cazador.java 
+AP: 
+Grid.java
 
 
 01-10-17
 --------------------------------------------------------------
-Worked on Flowchart (JY)
-Grid.java (AP)
+JY: 
+Worked on Flowchart
+AP:
+Grid.java
 
 01-09-17
 --------------------------------------------------------------
-Worked on UML Diagram (ET, AP)
+ET, AP: 
+Worked on UML Diagram
 
 01-08-17
 --------------------------------------------------------------
-Worked on Project Proposal (JY)
+JY: 
+Worked on Project Proposal
 
 ==============================================================
