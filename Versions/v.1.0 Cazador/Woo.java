@@ -224,17 +224,7 @@ public class Woo{
 			}
 		}
 		if ((numPrey == 0) && (numPred == 0)){
-			for (int w:p){
-				for (int l:q){
-					if ((w == p[1]) && (l == q[1])){
-						System.out.println((w+1) + ", " +(l+1));
-					}
-					else{
-						System.out.println((w+1) + ", " +(l+1));
-						checkGrid(w, l);
-						}
-				}
-			}
+			System.out.println("There are no predators or prey near you.")
 			}
 		else{
 			System.out.println("Number of Prey around: " + numPrey);
