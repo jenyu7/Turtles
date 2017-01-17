@@ -229,7 +229,7 @@ public class Woo{
 		else{
 			System.out.println("Number of Prey around: " + numPrey);
 			System.out.println("Number of Predators around: " + numPred);
-			System.out.println(g);
+			//System.out.println(g);
 		}
 	}
 	
