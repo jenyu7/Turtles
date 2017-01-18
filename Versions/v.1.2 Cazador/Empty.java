@@ -4,7 +4,7 @@ public class Empty extends Animal {
 
 	//Default Constructor (for _usedCors)
 	public Empty() { 
-		name = "     "; 
+		name = "empty"; 
 	}
 	
 	//Overloaded Constructor (for populating Grid)
@@ -17,7 +17,11 @@ public class Empty extends Animal {
 	}
 	
 	public String getSusName(){
-		return "";
+		return susName;
+	}
+	
+	public void setSusName(String str){
+		susName = str;
 	}
 
 }

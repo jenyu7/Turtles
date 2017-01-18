@@ -93,7 +93,7 @@ public class Woo{
 			System.out.println("You have encountered " + a + ".");
 			kats.setHP(((Predator)a).getDamage());
 			System.out.println(((Predator)a).getStory());
-			System.out.println("You sustained -" + ((Predator)a).getDamage() + "damage.");
+			System.out.println("You sustained -" + ((Predator)a).getDamage() + " damage.");
 			System.out.println("Current Catches: " + kats.getCP());
 			System.out.println("Current Health: " + kats.getHP());
 		}
@@ -167,7 +167,7 @@ public class Woo{
 		if (kats.getCP() == numPrey){
 			return 1;
 		}
-		else if (kats.getHP() == 0){
+		else if (kats.getHP() <= 0){
 			return -1;
 		}
 		else{
@@ -211,7 +211,7 @@ public class Woo{
 	public void checkSurround(int[] p, int[] q){
 		int numPrey = 0;
 		int numPred = 0;
-		System.out.println("Checking surrounding...");
+		//System.out.println("Checking surrounding...");
 		for (int i:p){
 			for (int j:q){
 				if (checkBox(i, j) == 1){
@@ -224,31 +224,43 @@ public class Woo{
 				}
 			}
 		}
+		//If there are no prey or predators in the surrounding squares. 
 		if ((numPrey == 0) && (numPred == 0)){
 			for (int w:p){
 				for (int l:q){
+					//if the loop runs through the original coordinates
 					if ((w == p[1]) && (l == q[1])){
 						//System.out.println((w+1) + ", " +(l+1));
 					}
 					else{
+						//if the coordinates have been used already (prevents forever rechecking)
 						if (!(g.getUsedCors()[l][w] instanceof Empty)){}
 						else{
-							System.out.println((w+1) + ", " +(l+1));
-							System.out.println("Checking grid...");
+							//System.out.println((w+1) + ", " +(l+1));
+							//System.out.println("Checking grid...");
 							g.setUsedCors(w, l, 0);
 							checkGrid(w, l);
-							System.out.println("Finished checking grid with " + (w+1) + ", " +(l+1));
+							//System.out.println("Finished checking grid with " + (w+1) + ", " +(l+1));
 							}
 						}
 				}
 				}
 				//System.out.println("" + (p[1]+1) + ", " +(q[1]+1));
+				(g.getArray()[q[1]][p[1]]).setSusName("+"+ numPrey + "," + "-" + numPred);
+				//System.out.println((g.getArray()[q[1]][p[1]]).getSusName());
+				System.out.println("At " +(p[1]+1) + "," + (q[1]+1) + ":");
+				System.out.println("There was nothing near you, but you looked around.");
 			}
 		else{
-			System.out.println("Number of Prey around: " + numPrey);
+			/*System.out.println("Number of Prey around: " + numPrey);
 			System.out.println("Number of Predators around: " + numPred);
-			System.out.println("Finished checking surroundings with " + (p[1]+1) + ", " +(q[1]+1));
+			System.out.println("Finished checking surroundings with " + (p[1]+1) + ", " +(q[1]+1));*/
+			(g.getArray()[q[1]][p[1]]).setSusName("+"+ numPrey + "," + "-" + numPred);
+			/*System.out.println((g.getArray()[q[1]][p[1]]).getSusName());
+			System.out.println("reg grid");
 			System.out.println(g);
+			System.out.println("diag grid");
+			System.out.println(g.toString("diag"));*/
 		}
 	}
 	
@@ -257,6 +269,10 @@ public class Woo{
 		Woo w = new Woo();
 		while (w.checkStatus() == 0){
 			w.ask();
+			//System.out.println("reg grid");
+			System.out.println(w.g);
+			//System.out.println("diag grid");
+			//System.out.println(w.g.toString("diag"));
 		}
 		if (w.checkStatus() == 1){
 			System.out.println("You won!");

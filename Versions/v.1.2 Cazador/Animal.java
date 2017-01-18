@@ -13,4 +13,6 @@ public abstract class Animal {
 	
 	public abstract String getSusName();
 	
+	public abstract void setSusName(String str);
+	
 }

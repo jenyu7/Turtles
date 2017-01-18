@@ -64,4 +64,6 @@ public class Prey extends Animal {
 		return susName;
 	}
 	 
+	public void setSusName(String str){
+	}
 }

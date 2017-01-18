@@ -26,14 +26,21 @@ public class Grid {
 	
 	//Regular toString() method
 	public String toString(){
-		String retStr = "    1     2     3     4     5     6     7     8     9\n";
+		String retStr = "     1     2     3     4     5     6     7     8     9\n";
 		retStr += "  -------------------------------------------------------\n";
 		int count = 1;
-		for (Animal[] a : _grid){
+		for (int l = 0; l < _grid.length; l ++){
 			retStr += " " + count + "|";
-			for (Animal b: a){
-				if ((b instanceof Prey) || (b instanceof Predator)){retStr += b.getSusName() + "|";}
-				else{retStr += b + "|";}
+			for (int w = 0; w < _grid[l].length; w++){
+				if (!(this.getUsedCors()[l][w] instanceof Empty)){
+					if ((_grid[l][w] instanceof Prey) || (_grid[l][w] instanceof Predator)){
+						retStr += _grid[l][w].getSusName() + "|";
+						}
+					else{retStr += _grid[l][w].getSusName() + "|";}
+				}
+				else{
+					retStr += "     |";
+				}
 			}
 			retStr += "\n";
 			retStr += "  -------------------------------------------------------\n";
