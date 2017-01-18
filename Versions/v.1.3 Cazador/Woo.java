@@ -34,6 +34,7 @@ public class Woo{
 		}
 		catch ( IOException e ) { }
 		kats = new Cazador( name );
+		System.out.println("Okay," + name + "you're looking for" + numPrey + "prey. Go!");
     }//end newGame()
 	
 	//When asking for coordinates from USER
@@ -167,7 +168,7 @@ public class Woo{
 		if (kats.getCP() == numPrey){
 			return 1;
 		}
-		else if (kats.getHP() == 0){
+		else if (kats.getHP() <= 0){
 			return -1;
 		}
 		else{
