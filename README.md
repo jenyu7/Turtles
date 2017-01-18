@@ -28,7 +28,7 @@ Features:
 
 Gameplay:
 
-1. Clone this Repo using the following SSH key: git@github.com:jenyu7/Turtles.git
+1. Clone this Repo using the following SSH key: "git@github.com:jenyu7/Turtles.git". 
 2. Then, type the command "cd Turtles" into the terminal or command prompt that you use. 
 3. Compile Woo.java by typing in "javac Woo.java". Then, after pressing enter, type "java woo" to run the java file. 
 4. Upon entering the game, you will be prompted to selected at which difficult you want the grid. The larger the grid, the harder the game!
