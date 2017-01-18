@@ -4,7 +4,7 @@ public class Empty extends Animal {
 
 	//Default Constructor (for _usedCors)
 	public Empty() { 
-		name = "empty"; 
+		name = "     "; 
 	}
 	
 	//Overloaded Constructor (for populating Grid)
