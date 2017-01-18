@@ -211,6 +211,7 @@ public class Woo{
 	public void checkSurround(int[] p, int[] q){
 		int numPrey = 0;
 		int numPred = 0;
+		System.out.println("Checking surrounding...");
 		for (int i:p){
 			for (int j:q){
 				if (checkBox(i, j) == 1){
@@ -227,18 +228,23 @@ public class Woo{
 			for (int w:p){
 				for (int l:q){
 					if ((w == p[1]) && (l == q[1])){
-						System.out.println((w+1) + ", " +(l+1));
+						//System.out.println((w+1) + ", " +(l+1));
 					}
 					else{
 						System.out.println((w+1) + ", " +(l+1));
+						System.out.println("Checking grid...");
 						checkGrid(w, l);
+						System.out.println("Finished checking grid with " + (w+1) + ", " +(l+1));
 						}
 				}
-			}
+				break;
+				}
+				//System.out.println("" + (p[1]+1) + ", " +(q[1]+1));
 			}
 		else{
 			System.out.println("Number of Prey around: " + numPrey);
 			System.out.println("Number of Predators around: " + numPred);
+			System.out.println("Finished checking surroundings with " + (p[1]+1) + ", " +(q[1]+1));
 			System.out.println(g);
 		}
 	}
