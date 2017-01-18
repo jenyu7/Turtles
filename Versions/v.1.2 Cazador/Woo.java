@@ -231,10 +231,14 @@ public class Woo{
 						//System.out.println((w+1) + ", " +(l+1));
 					}
 					else{
-						//System.out.println((w+1) + ", " +(l+1));
-						//System.out.println("Checking grid...");
-						checkGrid(w, l);
-						//System.out.println("Finished checking grid with " + (w+1) + ", " +(l+1));
+						if (!(g.getUsedCors()[l][w] instanceof Empty)){}
+						else{
+							System.out.println((w+1) + ", " +(l+1));
+							System.out.println("Checking grid...");
+							g.setUsedCors(w, l, 0);
+							checkGrid(w, l);
+							System.out.println("Finished checking grid with " + (w+1) + ", " +(l+1));
+							}
 						}
 				}
 				}
