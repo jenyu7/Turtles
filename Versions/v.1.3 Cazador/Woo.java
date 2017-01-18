@@ -34,6 +34,7 @@ public class Woo{
 		}
 		catch ( IOException e ) { }
 		kats = new Cazador( name );
+		System.out.println("Okay," + name + "you're looking for" + numPrey + "prey. Go!");
     }//end newGame()
 	
 	//When asking for coordinates from USER
