@@ -28,9 +28,9 @@ Features:
 
 Gameplay:
 
-1. Clone this Repo using the following SSH key: "git@github.com:jenyu7/Turtles.git". 
-2. Then, type the command "cd Turtles" into the terminal or command prompt that you use. 
-3. Compile Woo.java by typing in "javac Woo.java". Then, after pressing enter, type "java woo" to run the java file. 
+1. Clone this Repo using the following SSH key by copying the following in your terminal/command prompt: "git clone git@github.com:jenyu7/Turtles.git". 
+2. Then, copy the following command: cd Turtles, to enter the folder. 
+3. Compile Woo.java by copying and pasting "javac Woo.java". Then, after pressing enter, copy and paste "java woo" to run the java file. 
 4. Upon entering the game, you will be prompted to selected at which difficult you want the grid. The larger the grid, the harder the game!
 5. You will be granted by a story of how you ended up on this hunting ground, enconded with directions similar to those you are recieving now. 
 6. Then, you must enter your name, the narrator of your story will gladly taunt you with it many a time throughout your journey. 
