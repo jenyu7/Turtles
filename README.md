@@ -1,5 +1,4 @@
-# El Cazador 
-# by Turtles 
+# El Cazador by Turtles 
 
 Description: 
 
