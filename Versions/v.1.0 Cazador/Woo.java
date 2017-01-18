@@ -224,7 +224,7 @@ public class Woo{
 			}
 		}
 		if ((numPrey == 0) && (numPred == 0)){
-			System.out.println("There are no predators or prey near you.")
+			System.out.println("There are no predators or prey near you.");
 			}
 		else{
 			System.out.println("Number of Prey around: " + numPrey);
