@@ -36,14 +36,14 @@ Gameplay:
 6. Then, you must enter your name, the narrator of your story will gladly taunt you with it many a time throughout your journey. 
 7. After that, a labeled grid is printed as well as a message prompting you to select an x-coordinate, after entering you are prompted to select a y-coordinate as well. 
 8. Then, the grid is reprinted: 
-	a. If the square is a predator: 
-		i. A message is printed, detailing how you were captured, along with the amount of HP is lost.
-		ii. In the square selected, the name of the predator is displayed in the square. 
-	b. If the square is a prey: 
-		i. A message is printed, detailing how you were captured, along with the amount of Catch Points gained. 
-		ii. In the square selected, the name of the prey is displayed in the square.
-	c. If the square is empty: 
-		i. In the square selected, a string is printed in the form (Number of Prey), (Number of Predators). 
+	- If the square is a predator: 
+		- A message is printed, detailing how you were captured, along with the amount of HP is lost.
+		- In the square selected, the name of the predator is displayed in the square. 
+	- If the square is a prey: 
+		- A message is printed, detailing how you were captured, along with the amount of Catch Points gained. 
+		- In the square selected, the name of the prey is displayed in the square.
+	-  If the square is empty: 
+		- In the square selected, a string is printed in the form (Number of Prey), (Number of Predators). 
 9. If all of the prey are selected, the game is over, and you are declared the supreme hunter!
 10. If you lose all of your Health Points, the game is over, and you are declared dead. 
 
