@@ -31,7 +31,7 @@ public class Grid {
 		for (Animal[] a : _grid){
 			retStr += count + "|";
 			for (Animal b: a){
-				if ((b instanceof Prey) || (b instanceof Predator)){retStr += "Anima|";}
+				if ((b instanceof Prey) || (b instanceof Predator)){retStr += b.getSusName() + "|";}
 				else{retStr += b + "|";}
 			}
 			retStr += "\n";

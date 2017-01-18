@@ -7,13 +7,23 @@ public class Predator extends Animal {
 	//Names and Stories
     ArrayList<String> names = new ArrayList<String>(7); { 
 	names.add("Jen the Jaguar");
-	names.add("Zoey the Zebra");
+	names.add("Zooey the Zebra");
 	names.add("Bonnie the Bear"); 
 	names.add("Dasha the Dartfrog");
 	names.add("Masha the Mammoth");
 	names.add("Yiling the Yak");
 	names.add("Cody the Crocodile");
 	} 
+	
+	ArrayList<String> susNames = new ArrayList<String>();{
+		susNames.add(" Jen "); 
+		susNames.add("Zooey"); 
+		susNames.add("Bnnie"); 
+		susNames.add("Dasha");
+		susNames.add("Masha");
+		susNames.add("Yilng");
+		susNames.add(" Cdy ");
+	}
 	
 	ArrayList<String> stories = new ArrayList<String>(7);{
 	stories.add("Sleep deprived, you have just disturbed this jaguar at the wrong time. One swipe at your face, and a few bites in your abdomen would've killed you. Instead, she just slashes your arm, leaving gaping wounds.");
@@ -46,6 +56,7 @@ public class Predator extends Animal {
 		name = names.get(randInt); 
 		story = stories.get(randInt);
 		damage = damages.get(randInt); 
+		susName = susNames.get(randInt);
 	}
 	
 	// Returns name of Predator
@@ -63,5 +74,10 @@ public class Predator extends Animal {
 	//Gets the value of damage (Useful post MVP)
 	public int getDamage () { 
 		return damage; 
+	}
+	
+	//Gets the sus name
+	public String getSusName(){
+		return susName;
 	}
 } 
