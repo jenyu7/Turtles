@@ -24,6 +24,12 @@ UNRESOLVED ISSUES
 - How to display the Grid (String manipulation >:( )
 - Opening more squares aghh
     - how to escape this forever loop???
+- Ok, so there was a bug with Woo.java in the v.1.1 Cazador dir. Basically, whenever the user would type in the coordinates for a box on the grid where there were no predators around it, the program would dive into a forever loop.
+
+Basically, here's the bug. This error does not happen EVERYTIME you hit a square with nothing around it and try to open the squares next to it. There are two specific cases: 1. Your square has nothing around it, and the some or all of the squares around it also have nothing around them; 2. Your square has nothing around it, but the squares around all have something around them. The code only runs into the StackOverflowError in the FIRST CASE. If there are things around the surrounding squares, the code is fine. To this error, I have attached a code snippet of the instance of where opening the surrounding squares DID work.
+
+Of course, we will have to translate all of this into the graphics of the grid, but that's an issue to be resolved in a later, more advanced version (which you can work on, as I'm trying to resolve this bug). My assumption is that when a square around the square the user chose (which has nothing around it already), ALSO has nothing around it, it begins to check the original square (nothing around), and then the original square checks that same surrounding square (nothing around again), and then the program just flips flops between a few coordinates. If you run it with my current diagnostic prints, you can see the flip flopping of coordinates; some of the coordinates in the two arrays are never reached at all, depending on where the surrounding empty square's coordinates are reached when the for loop is run.
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
