@@ -167,7 +167,7 @@ public class Woo{
 		if (kats.getCP() == numPrey){
 			return 1;
 		}
-		else if (kats.getHP() == 0){
+		else if (kats.getHP() <= 0){
 			return -1;
 		}
 		else{
