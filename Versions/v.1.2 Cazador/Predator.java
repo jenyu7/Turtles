@@ -80,4 +80,7 @@ public class Predator extends Animal {
 	public String getSusName(){
 		return susName;
 	}
+	
+	public void setSusName(String str){
+	}
 } 
