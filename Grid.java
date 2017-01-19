@@ -24,14 +24,45 @@ public class Grid {
 		initPopulateUsed();
     }
 	
-	//toString() method
+	//Regular toString() method
 	public String toString(){
-		String retStr = "";
-		for (Animal[] a : _grid){
-			for (Animal b: a){
-				retStr += b + "       ";
+		String retStr = "     1     2     3     4     5     6     7     8     9\n";
+		retStr += "  -------------------------------------------------------\n";
+		int count = 1;
+		for (int l = 0; l < _grid.length; l ++){
+			retStr += " " + count + "|";
+			for (int w = 0; w < _grid[l].length; w++){
+				if (!(this.getUsedCors()[l][w] instanceof Empty)){
+					if ((_grid[l][w] instanceof Prey) || (_grid[l][w] instanceof Predator)){
+						retStr += _grid[l][w].getSusName() + "|";
+						}
+					else{retStr += _grid[l][w].getSusName() + "|";}
+				}
+				else{
+					retStr += "     |";
+				}
 			}
 			retStr += "\n";
+			retStr += "  -------------------------------------------------------\n";
+			count ++;
+		}
+		return retStr;
+	}
+	
+	//Overloaded toString() method in order to diagnose errors
+	public String toString(String diag){
+		String retStr = "    1     2     3     4     5     6     7     8     9\n";
+		retStr += "  -------------------------------------------------------\n";
+		int count = 1;
+		for (Animal[] a : _grid){
+			retStr += " " + count + "|";
+			for (Animal b: a){
+				if ((b instanceof Prey) || (b instanceof Predator)){retStr += b.getSusName() + "|";}
+				else{retStr += b + "|";}
+			}
+			retStr += "\n";
+			retStr += "  -------------------------------------------------------\n";
+			count ++;
 		}
 		return retStr;
 	}

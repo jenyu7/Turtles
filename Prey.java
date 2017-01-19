@@ -12,7 +12,17 @@ public class Prey extends Animal {
 	names.add("Patricia the Pangolin");
 	names.add("Eugene the Egret");
 	names.add("Allard the Armadillo");
-	names.add("Jenn the Jackrabbit");
+	names.add("JennK the Jackrabbit");
+	}
+	
+	ArrayList<String> susNames = new ArrayList<String>();{
+		susNames.add(" Ida "); 
+		susNames.add("Rchel"); 
+		susNames.add("Jssca"); 
+		susNames.add("Ptrca");
+		susNames.add("Eugne");
+		susNames.add("Allrd");
+		susNames.add("JennK");
 	}
 	
 	ArrayList<String> stories = new ArrayList<String>();{
@@ -31,6 +41,7 @@ public class Prey extends Animal {
 		name = names.get(randInt); 
 		story = stories.get(randInt);
 		CP = 1; 
+		susName = susNames.get(randInt);
 	} 
 	
 	//Returns the name of the Prey
@@ -47,5 +58,12 @@ public class Prey extends Animal {
 	public String getStory(){
 		return story;
 	}
+	
+	//Gets the sus name
+	public String getSusName(){
+		return susName;
+	}
 	 
+	public void setSusName(String str){
+	}
 }
