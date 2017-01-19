@@ -17,18 +17,12 @@ OBSTACLES OVERCOME
 - Time Management. Early on, we split up the work, but some of the kinks hadn't been worked out yet, so we fell a little behind. However. this project in its MVP version should work fine. 
 - Was criticized by Konstatinovich for having a public variable. Made all variables either private or protected out of shame. In order to retain access, wrote Accessor and Mutator methods. [Jen]
 - Could not access some mutators and accessors. Fixed by TYPECASTING!! 
+- There was a big bug where if you were to hit upon a square with nothing around it, and it too had squares surrounding it that had nothing around them, then the program would launch into an enormous forever loop. I [Jen] was in charge of diagnosing and fixing this bug (it's within the code I wrote, after all) and eventually, I realized that first, as mentioned above, it would only go into the forever loop in the case that the square with nothing around it also had squares around it with nothing around it. If the square with nothing around it had surrounding squares that all had predators and prey around them, then the program would run fine. What I also discovered was that the program would keep checking the same coordinates over and over again. Why? Because when I invoked checkGrid() [checks the grid at a certain coordinate for the stuff around it] on the surrounding squares, I DIDN'T ADD THESE SQUARES TO MY ARRAY OF USED COORDINATES. I only added in used when I asked the user for them; I didn't realize I had to add them in when the progrma decided to check squares by itself. So I just made sure the coordinates hadn't already been visited, and if they hadn't, then to invoke checkGrid() on those coordinates. This way, there wasn't the constant yo-yoing of checking coordinates with nothing around them; they would've already been established as surrounded by empty squares. 
+- Displaying the grid was easier  
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - @Eugene: What is coord??
-- How to display the Grid (String manipulation >:( )
-- Opening more squares aghh
-    - how to escape this forever loop???
-- Ok, so there was a bug with Woo.java in the v.1.1 Cazador dir. Basically, whenever the user would type in the coordinates for a box on the grid where there were no predators around it, the program would dive into a forever loop.
-
-Basically, here's the bug. This error does not happen EVERYTIME you hit a square with nothing around it and try to open the squares next to it. There are two specific cases: 1. Your square has nothing around it, and the some or all of the squares around it also have nothing around them; 2. Your square has nothing around it, but the squares around all have something around them. The code only runs into the StackOverflowError in the FIRST CASE. If there are things around the surrounding squares, the code is fine. To this error, I have attached a code snippet of the instance of where opening the surrounding squares DID work.
-
-Of course, we will have to translate all of this into the graphics of the grid, but that's an issue to be resolved in a later, more advanced version (which you can work on, as I'm trying to resolve this bug). My assumption is that when a square around the square the user chose (which has nothing around it already), ALSO has nothing around it, it begins to check the original square (nothing around), and then the original square checks that same surrounding square (nothing around again), and then the program just flips flops between a few coordinates. If you run it with my current diagnostic prints, you can see the flip flopping of coordinates; some of the coordinates in the two arrays are never reached at all, depending on where the surrounding empty square's coordinates are reached when the for loop is run.
 
 
 COOL STUFF LEARNED
@@ -39,12 +33,19 @@ MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Changed from empty square to the "ghost" concept, back to creating an array storing # of predators/prey around a box
   - ANDDD changed back to the object, now named Empty
+- For nice grid display, changed the names of the animals into 5 letter formats.
+- If there were only predators or only prey nearby, the quantity of the other would still be displayed. To clarify, if there were 2 predators around a square, but no prey around, the square would display "+0,-2", which was different from planned; before, it was planned to just have displayed "-2". This was to make the grid look nicer and not incorporate as much string manipulation. 
+- Squares with nothing surround them display "+0,-0", which was different from planned. The planned version didn't touch specifically on what these squares would display, but not that LOL
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - noSleep CS = new noSleep();
 - noSleep instanceOf FatigueAndPain
 - FatigueAndPain extends WhyIDoDis
+- When there is no bug: Love for CS > 100
+  When there is a bug: Love for CS < 0
+  When you fixed a bug: Love for CS >>>>> 9000
 
 
  ______   ______   __   __   __       ______   _______
@@ -55,8 +56,38 @@ LESSONS LEARNED
    \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
-**Detailed Devlog begins 1/12. If any of you (Eugene, Allard) 
-want to expand below, feel free to. I'll just speak for myself.
+**Detailed Devlog begins 1/12. 
+
+01-18-17
+--------------------------------------------------------------
+JY: 
+- FINALLY DEBUGGED THE CODE
+- Escaped state of pain and suffering into a state of jubilation
+- Wrote the gameplay toString() method for Grid.java
+   (Basically, the grid is made, and the game is presentable-worthy :D)
+- Added method setSusName() for Empty.java (Also added abstract to Animal.java) 
+
+01-17-17
+--------------------------------------------------------------
+ET, AP: 
+- Edited README
+- Launch Instructions, gameplay, short descript of game
+
+JY: 
+- STILL trying to debug BS
+- Accidentally made a grid while trying to fix bug. Guess this is the actual gameplay grid now. 
+- Added new ArrayList<String> susNames of five letter abbreviations for animal names
+- Added method getSusName() (Also added abstract to Animal.java)
+- Edited toString() for Grid [Also added an overloaded toString(), for diagnostics]
+- Realized the bug but still can't fix it
+- Still in a state of pain and suffering
+
+01-16-17
+--------------------------------------------------------------
+JY: 
+- Still trying to debug surround squares
+- Added too many diagnostic print statements 
+- In a state of pain
 
 01-15-17
 --------------------------------------------------------------
