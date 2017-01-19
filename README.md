@@ -31,10 +31,10 @@ Gameplay:
 1. Clone this Repo using the following SSH key by copying the following in your terminal/command prompt: "git clone git@github.com:jenyu7/Turtles.git". 
 2. Then, copy the following command: cd Turtles, to enter the folder. 
 3. Compile Woo.java by copying and pasting "javac Woo.java". Then, after pressing enter, copy and paste "java woo" to run the java file. 
-4. Upon entering the game, you will be prompted to selected at which difficult you want the grid. The larger the grid, the harder the game!
+4. Upon entering the game, you will be prompted to selected at which size you want the grid, between a 9x9 and a 20x20. The larger the grid, the harder the game!
 5. You will be granted by a story of how you ended up on this hunting ground, enconded with directions similar to those you are recieving now. 
 6. Then, you must enter your name, the narrator of your story will gladly taunt you with it many a time throughout your journey. 
-7. After that, a labeled grid is printed as well as a message prompting you to select an x-coordinate, after entering you are prompted to select a y-coordinate as well. 
+7. After that, a labeled grid is printed as well as a message prompting you to select an x-coordinate, after entering you are prompted to select a y-coordinate as well. <b> NOTE: </b> In the larger levels, your terminal may not have the width to sustain the amount of columns that are printed (for example, git bash defaults the amount of columns at 80, but you can right-click and go to "Options" and place a larger number). 
 8. Then, the grid is reprinted: 
 	- If the square is a predator: 
 		- A message is printed, detailing how you were captured, along with the amount of HP is lost.
