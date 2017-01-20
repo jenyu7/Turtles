@@ -177,7 +177,7 @@ public class Woo{
 	    return 0;
 	}
     }
-	
+
     //HELPER FUNCTIONS:
 	
     //specialCaseBoo: Returns boolean on whether or not the square is a special case (has less than 8 neighbors)
@@ -247,9 +247,23 @@ public class Woo{
 	    (g.getArray()[q[1]][p[1]]).setSusName("+"+ numPrey + "," + "-" + numPred);
 	}
     }
-	
+
+   	
     //Where the magic haPPENS
     public static void main(String[] args){
+	String str = "\n\n\n";
+	str += "   ('-.                              ('-.       .-') _  ('-.     _ .-') _               _  .-')\n";   
+	str += " _(  OO)                            ( OO ).-.  (  OO) )( OO ).-.( (  OO) )             ( \\( -O )\n";
+	str +="(,------.,--.              .-----.  / . --. /,(_)----. / . --. / \\     .'_  .-'),-----. ,------.\n"  ;
+	str +=" |  .---'|  |.-')         '  .--./  | \\-.  \\ |       | | \\-.  \\  ,`'--..._)( OO'  .-.  '|   /`. '\n" ;
+	str +=" |  |    |  | OO )        |  |('-..-'-'  |  |'--.   /.-'-'  |  | |  |  \\  '/   |  | |  ||  /  | |\n";
+	str +="(|  '--. |  |`-' |       /_) |OO  )\\| |_.'  |(_/   /  \\| |_.'  | |  |   ' |\\_) |  |\\|  ||  |_.' |\n" ;
+	str +=" |  .--'(|  '---.'       ||  |`-'|  |  .-.  | /   /___ |  .-.  | |  |   / :  \\ |  | |  ||  .  '.'\n";
+	str +=" |  `---.|      |       (_'  '--'\\  |  | |  ||        ||  | |  | |  '--'  /   `'  '-'  '|  |\\  \\ \n " ;
+	str +="`------'`------'          `-----'  `--' `--'`--------'`--' `--' `-------'      `-----' `--' '--'\n" ;
+	System.out.println(str);
+	str = "                       Project by Jennifer Yu, Eugene Thomas, Allard Peng";
+	System.out.println(str);
 	int sideLength = 0;
 	boolean between = false;
 	while (between == false){
