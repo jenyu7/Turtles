@@ -38,7 +38,7 @@ El Cazador, spanish for "The Hunter", is a mashup of the two classic games Battl
 **Launch Instructions and Gameplay:** 
 
 1. Clone this Repo using the following SSH key by copying the following in your terminal/command prompt: ``git clone git@github.com:jenyu7/Turtles.git``. 
-2. Then, copy the following command: ``cd Turtles``, to enter the folder. 
+2. Then, enter whatever folder you cloned into and copy: ``cd Turtles``, to enter the folder. 
 3. Compile Woo.java by copying and pasting ``javac Woo.java``. Press Enter. Copy and paste ``java woo`` to run the java file. 
 4. You will be greeted with the titlescreen and a storyline, along with instructions on how to play the game, and fact sheets on all the aniamsl. 
 5. You will then be prompted to selected at which size you want the grid, between a 9x9 and a 16x16. The larger the grid, the harder the game!
