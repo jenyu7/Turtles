@@ -12,11 +12,11 @@ public class Woo{
 	
     //Constructor
     public Woo(int s){
-	g = new Grid(s);
+       	g = new Grid(s);
 	numPrey = Grid.populate(g);
 	isr = new InputStreamReader( System.in );
 	in = new BufferedReader( isr );
-	newGame();
+	newGame(); 
     }
 	
     //Starts a new game
@@ -24,40 +24,48 @@ public class Woo{
     public void newGame(){
 	String s = "";
 	String name = "";
-	s += "EL CAZADOR\n";
-	s += "blah blah blah some storyline";
+	s += "\n\nIn the middle of the swamplands, you are a hunter, only trying to catch your prey...\n";
+	s += "But you are not in any regular swamp.... you have found yourself in the Dead Man's Swamp!!!!\n";
+	s += "After one look, you realize that there are too many dangerous predators around and you are a changed cazador!\n"; 
+	s += "Instead of killing the prey, you will help the prey so you all can escape Dead Man's Swamp.\n "; 
 	System.out.println(s);
-	s = "What is your name?";
+	s = "What is your name?\n";
 	System.out.println(s);
 	try {
 	    name = in.readLine();
 	}
 	catch ( IOException e ) { }
-	System.out.println("Hey Cazador " + name + "! You need to find " + numPrey + " prey to bring to safety. Go!");
+	System.out.println("\n\nHey Cazador " + name + ", there are " + numPrey + " prey in Dead Man's Swamp. Go!\n");
 	kats = new Cazador( name );
     }//end newGame()
 	
+
+    // prompts the user between playing the game, or selecting the rules option: 
+
+    // public void p
+
+
     //When asking for coordinates from USER
     public void ask(){
 	int xcor = 0; 
 	int ycor = 0;
-	System.out.println("Please choose an x-coordinate between 1 and " +  g.getSideLength());
+	System.out.println("\nPlease choose an x-coordinate between 1 and " +  g.getSideLength() + "\n");
 	xcor = Keyboard.readInt();
-	System.out.println("Please choose a y-coordinate between 1 and " + g.getSideLength());
+	System.out.println("\nPlease choose a y-coordinate between 1 and " + g.getSideLength() + "\n");
 	ycor = Keyboard.readInt();
 	//if the coordinates exist
 	if (((xcor <= g.getSideLength()) && (xcor > 0)) && ((ycor <= g.getSideLength()) && (ycor > 0))){
 	    //if the coordinate has already been used
 	    if (!(g.getUsedCors()[ycor-1][xcor-1] instanceof Empty)){
-		System.out.println("Sorry, those coordinates have been used already.");
-		System.out.println("Please enter in a different set of coordinates.");
+		System.out.println("Sorry, those coordinates have been used already.\n");
+		System.out.println("Please enter in a different set of coordinates.\n");
 		ask();
 	    }
 	    //if the coordinate is original, and exists. 
 	    else{
 		g.setUsedCors(xcor-1, ycor-1, 0);
 		/* ***IMPORTANT***: BELOW, THE MODIFICATION TO INDICES HAS ALREADY BEEN MADE, SO CHECKGRID() DOES NOT NEED TO SUBTRACT ONE TO STAY WITHIN BOUNDS*/
-		System.out.println("Coordinates: " + xcor + "," + ycor);
+		System.out.println("\nCoordinates: " + xcor + "," + ycor + "\n");
 		checkGrid(xcor-1, ycor-1);
 	    }
 	}
@@ -240,8 +248,6 @@ public class Woo{
 		}
 	    }
 	    (g.getArray()[q[1]][p[1]]).setSusName("+"+ numPrey + "," + "-" + numPred);
-	    System.out.println("At " +(p[1]+1) + "," + (q[1]+1) + ":");
-	    System.out.println("There was nothing near you, but you looked around.");
 	}
 	else{
 	    (g.getArray()[q[1]][p[1]]).setSusName("+"+ numPrey + "," + "-" + numPred);
@@ -262,15 +268,32 @@ public class Woo{
 	str +=" |  `---.|      |       (_'  '--'\\  |  | |  ||        ||  | |  | |  '--'  /   `'  '-'  '|  |\\  \\ \n " ;
 	str +="`------'`------'          `-----'  `--' `--'`--------'`--' `--' `-------'      `-----' `--' '--'\n" ;
 	System.out.println(str);
-	str = "                       Project by Jennifer Yu, Eugene Thomas, Allard Peng";
+	str = "\n                        by Jennifer Yu, Eugene Thomas, and Allard Peng\n\n";
 	System.out.println(str);
+
+
+	String rules = ""; 
+	rules += " ======================================  SOME BASIC RULES ===================================== \n"; 
+	rules += "\n\n1. You will first be prompted to input dimensions for the hunting ground.\n"; 
+	rules += "2. Then, once you read these directions, put in your name, which will be used to taunt you. \n"; 
+	rules += "3. You will then be prompted to select x and y coordinates. Upon selecting them, your initial grid will be printed.\n"; 
+	rules += "4. When you catch a prey, you gain catch points and when you catch a predator you lose damage. \n";
+	rules += "5. When you catch an empty square, coordinates are printed: \n"; 
+	rules += "   The positive number signifies the amount of prey around. \n"; 
+	rules += "   The negative number signifies the number of predators around. \n"; 
+	rules += "6. If you lose all damage points, you lose. If you catch all of the prey (a target number that is printed at various times during the game), you win. \n"; 
+	System.out.println(rules); 
+
+	boolean wannaPlay = true; 
+
+	while (wannaPlay) { 
 	int sideLength = 0;
 	boolean between = false;
 	while (between == false){
-		System.out.println("How big do you want your hunting ground to be? Choose a side length for your map, from 9 to 16.");
+		System.out.println("How big do you want your hunting ground to be? Choose a side length for your map, from 9 to 16.\n");
 		sideLength = Keyboard.readInt();
 		if(sideLength > 16 || sideLength < 9){
-			System.out.println("Sorry, that number is not between 9 and 16. Please choose again.");
+			System.out.println("Sorry, that number is not between 9 and 16. Please choose again.\n");
 		}
 		else{
 			between = true;
@@ -282,11 +305,27 @@ public class Woo{
 	    System.out.println(w.g);
 		}
 	if (w.checkStatus() == 1){
-	    System.out.println("You won!");
+	    System.out.println("Wow, you won! I doubt you'll do it again...\n");
+	    System.out.println("Press 1 to play again. Press 2 to escape while you still can.\n"); 
+	    boolean applies = false; 
+	    while (!applies) { 
+	    int t; 
+	    t = Keyboard.readInt(); 
+	    if (t != 1 && t != 2) { 
+		System.out.println("Please pick 1 or 2...."); 
 		}
+	    else { if (t == 2) {wannaPlay = false; applies = true;}
+		else if (t == 1) {applies = true; System.out.println("\nPlaying again...\n\n");}}}}
 	else{
-	    System.out.println("You lost!");
+	    System.out.println("Surprise, surprise, you lost! I guess my swamp is too good for you.");
+	    System.out.println("Press 1 to play again. Press 2 to cowardly wince away in terror.\n"); 
+	    boolean appliez = false; 
+	    while (!appliez) { 
+	    int s; 
+	    s = Keyboard.readInt(); 
+	    if (s != 1 && s != 2) { 
+		System.out.println("Please pick 1 or 2...."); 
 		}
-		
-    }
-} 
+	    else { if (s == 2) {wannaPlay = false; appliez = true;}
+		else if (s == 1) {appliez = true; System.out.println("\nPlaying again...\n\n");}}}}
+	}}}
