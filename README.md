@@ -1,4 +1,5 @@
 <pre>
+<b> 
    ('-.                              ('-.       .-') _  ('-.     _ .-') _               _  .-')   
  _(  OO)                            ( OO ).-.  (  OO) )( OO ).-.( (  OO) )             ( \( -O )  
 (,------.,--.              .-----.  / . --. /,(_)----. / . --. / \     .'_  .-'),-----. ,------.  
@@ -8,13 +9,13 @@
  |  .--'(|  '---.'       ||  |`-'|  |  .-.  | /   /___ |  .-.  | |  |   / :  \ |  | |  ||  .  '.' 
  |  `---.|      |       (_'  '--'\  |  | |  ||        ||  | |  | |  '--'  /   `'  '-'  '|  |\  \  
  `------'`------'          `-----'  `--' `--'`--------'`--' `--' `-------'      `-----' `--' '--' 
+ </b> 
  </pre>
  
- ## El Cazador
 
 Description: 
 
-El Cazador is a game that consists of a 9x9 grid (in default mode) and animals randomly spread about the grid. The animals are either predators or prey, and the player uses numbers that are revealed in boxes bordering the animals to achieve the goal. The object of this game is to catch all the prey before getting killed by the predators. The game is a lot like Minesweeper in that patches of unoccupied "squares" on the grid open up, and reveal the numbers that provide the hints at where animals are located. Furthermore, "choosing" a square with a predator (bad!) on it will reduce the life of the player. Likewise, choosing a square with a prey on it will increment the player's catch points by 1.
+El Cazador, spanish for "The Hunter", is a mashup of the two classic games Battleship and Minesweeper. As the hunter, your objective is to "catch" as many prey as possible, and avoid all the predators in the forest who will attack you (unless you're a masochist and into that...to each his'er own!). The game's hunting grounds range from a 9x9 grid to a 16x16 grid (the larger the grid, the harder the game), and at the beginning, the grid is populated with 20% consisting of animals (10% prey, 10% predators). You will be informed on how many prey you need to catch in order to win the game. You also begin the game with 100 HP (Health Points), which decrease every time you are attacked by a predator (the damage per predator varies). Every time you make a catch, you increase your CP (Catch Points) by 1 and the program will update you on how many more prey you need to catch. You roam the hunting grounds by typing in x and y coordinates on the grid; bear in mind, however, that you cannot enter coordinates outside the grid (if you're playing in a 9x9, please don't enter x:10, y:3), and you cannot revisit coordinates you have already entered (if you already went to x:3, y:4, you cannot enter those same coordinates anymore, so sorry). If the coordinate you enter has a prey, great! You made a catch! If the coordinate you enter has a predator...not so great? You get attacked, and hopefully the damage you sustain doesn't kill you. If your coordinate has nothing there, then you will receive an indication of how many predators and prey are near you. This is where the minesweeper element comes into play; if there is nothing around you, then you open up the squares around you as well. With the right coordinate, sometimes you can open up bunches of squares at the same time...leading you ever closer towards success. In the end, you win if you have caught all the prey, or if you have depleted your health. Let's all collectively hope it's the latter--I mean former(what??). At any rate...HAPPY HUNTING!
    
    
 Features: 
@@ -28,7 +29,7 @@ Features:
       - Yiling the Yak
       - Cody the Crocodile
     
-    THE PREY: 
+    MEET THE PREY: 
       - Ida the Iguana
       - Rachel the Rabbit
       - Jessica the Jellyfish
