@@ -39,11 +39,11 @@ El Cazador, spanish for "The Hunter", is a mashup of the two classic games Battl
 
 1. Clone this Repo using the following SSH key by copying the following in your terminal/command prompt: ``git clone git@github.com:jenyu7/Turtles.git``. 
 2. Then, enter whatever folder you cloned into and copy: ``cd Turtles``, to enter the folder. 
-3. Compile Woo.java by copying and pasting ``javac Woo.java``. Press Enter. Copy and paste ``java woo`` to run the java file. 
-4. You will be greeted with the titlescreen and a storyline, along with instructions on how to play the game, and fact sheets on all the aniamsl. 
+3. Compile ``Woo.java`` by copying and pasting ``javac Woo.java``. Press Enter. Copy and paste ``java woo`` to run the java file. 
+4. You will be greeted with the titlescreen and a storyline, along with instructions on how to play the game, and fact sheets on all the animals. 
 5. You will then be prompted to selected at which size you want the grid, between a 9x9 and a 16x16. The larger the grid, the harder the game!
 6. Enter your name; introduce yourself! 
-7. After that, a labeled grid is printed as well as a message prompting you to select an x-coordinate, after entering you are prompted to select a y-coordinate as well. ** NOTE: ** In the larger levels, your terminal may not have the width to sustain the amount of columns that are printed (for example, git bash defaults the amount of columns at 80, but you can right-click and go to "Options" and place a larger number). 
+7. After that, a labeled grid is printed as well as a message prompting you to select an x-coordinate. After entering the x-coordinate, you are then prompted to select a y-coordinate as well.  
 8. Then, the grid is reprinted: 
 	- If you met a predator: 
 		- A message is printed, detailing how you were attacked, along with the amount of HP you lost, your current health, your current catch points, and how many prey you still need to catch.
