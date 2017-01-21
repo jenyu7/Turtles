@@ -32,7 +32,7 @@ El Cazador, spanish for "The Hunter", is a mashup of the two classic games Battl
       - Patricia the Pangolin
       - Eugene the Egret
       - Allard the Armadillo
-      - Jenn the Jackrabbit
+      - JennK the Jackrabbit
 
 
 **Launch Instructions and Gameplay:** 
