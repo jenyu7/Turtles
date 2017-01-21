@@ -1,3 +1,5 @@
+//Abstract Class Animal 
+//This is the superclass of Predator, Prey, and Empty
 public abstract class Animal { 
 
 	//Declare Variables
@@ -8,7 +10,7 @@ public abstract class Animal {
 	protected String story;
 	protected String susName;
 	
-	// MVP Version: 
+	//Methods
 	public abstract String toString(); 
 	
 	public abstract String getSusName();
