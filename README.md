@@ -10,7 +10,7 @@
  `------'`------'          `-----'  `--' `--'`--------'`--' `--' `-------'      `-----' `--' '--' 
  </pre>
  
- ### El Cazador
+ ## El Cazador
 
 Description: 
 
@@ -40,23 +40,23 @@ Features:
 
 Gameplay:
 
-1. Clone this Repo using the following SSH key by copying the following in your terminal/command prompt: "git clone git@github.com:jenyu7/Turtles.git". 
-2. Then, copy the following command: cd Turtles, to enter the folder. 
-3. Compile Woo.java by copying and pasting "javac Woo.java". Then, after pressing enter, copy and paste "java woo" to run the java file. 
-4. Upon entering the game, you will be prompted to selected at which size you want the grid, between a 9x9 and a 20x20. The larger the grid, the harder the game!
-5. You will be granted by a story of how you ended up on this hunting ground, enconded with directions similar to those you are recieving now. 
-6. Then, you must enter your name, the narrator of your story will gladly taunt you with it many a time throughout your journey. 
+1. Clone this Repo using the following SSH key by copying the following in your terminal/command prompt: ``git clone git@github.com:jenyu7/Turtles.git``. 
+2. Then, copy the following command: ``cd Turtles``, to enter the folder. 
+3. Compile Woo.java by copying and pasting ``javac Woo.java``. Press Enter. Copy and paste ``java woo`` to run the java file. 
+4. You will be greeted with the titlescreen and a storyline, along with instructions on how to play the game, and fact sheets on all the aniamsl. 
+5. You will then be prompted to selected at which size you want the grid, between a 9x9 and a 16x16. The larger the grid, the harder the game!
+6. Enter your name; introduce yourself! 
 7. After that, a labeled grid is printed as well as a message prompting you to select an x-coordinate, after entering you are prompted to select a y-coordinate as well. <b> NOTE: </b> In the larger levels, your terminal may not have the width to sustain the amount of columns that are printed (for example, git bash defaults the amount of columns at 80, but you can right-click and go to "Options" and place a larger number). 
 8. Then, the grid is reprinted: 
-	- If the square is a predator: 
-		- A message is printed, detailing how you were captured, along with the amount of HP is lost.
-		- In the square selected, the name of the predator is displayed in the square. 
-	- If the square is a prey: 
-		- A message is printed, detailing how you were captured, along with the amount of Catch Points gained. 
-		- In the square selected, the name of the prey is displayed in the square.
-	-  If the square is empty: 
-		- In the square selected, a string is printed in the form (Number of Prey), (Number of Predators). 
-9. If all of the prey are selected, the game is over, and you are declared the supreme hunter!
-10. If you lose all of your Health Points, the game is over, and you are declared dead. 
+	- If you met a predator: 
+		- A message is printed, detailing how you were attacked, along with the amount of HP you lost, your current health, your current catch points, and how many prey you still need to catch.
+		- The name of the predator is displayed in the coordinate you just visited. 
+	- If you found a prey: 
+		- A message is printed, detailing how you found and caught the prey, along with your updated catch points, your current health, and how many prey you still need to catch. 
+		- The name of the prey is displayed in the coordinate you just visited.
+	-  If you found nothing: 
+		- The number of predators and prey in the coordinates around you is displayed in the coordinate you just visited, and in this format ``+<number of prey>,-<number of predators>``. 
+9. If you catch all the prey, you have won the game! You release the prey in a safe(r) forest and all is well. 
+10. If you are attacked to the point where you have depleted all your health points, you are dead (and a loser...sorry). 
 
-# HAPPY HUNTING!!!
+## HAPPY HUNTING!!!
