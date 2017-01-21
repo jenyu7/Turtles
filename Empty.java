@@ -1,5 +1,3 @@
-// Empty Class
-
 public class Empty extends Animal { 
 
 	//Default Constructor (for _usedCors)
