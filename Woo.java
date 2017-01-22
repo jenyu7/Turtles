@@ -300,6 +300,7 @@ public class Woo{
 		}
 	}
 	Woo w = new Woo(sideLength);
+	System.out.println(w.g); 
 	while (w.checkStatus() == 0){
 	    w.ask();
 	    System.out.println(w.g);
