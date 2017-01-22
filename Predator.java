@@ -66,6 +66,16 @@ public class Predator extends Animal implements RealAnimals{
 		endStory = endStories.get(randInt);
 	}
 	
+	//Overloaded Constructor
+	public Predator(int damageNum){
+		int randInt = (int) (Math.random()*7); 
+		name = names.get(randInt); 
+		story = stories.get(randInt);
+		damage = damageNum; 
+		susName = susNames.get(randInt);
+		endStory = endStories.get(randInt);
+	}
+	
 	// Returns name of Predator
 	public String toString() { 
 		return name; 
