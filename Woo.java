@@ -57,7 +57,7 @@ public class Woo{
 	if (((xcor <= g.getSideLength()) && (xcor > 0)) && ((ycor <= g.getSideLength()) && (ycor > 0))){
 	    //if the coordinate has already been used
 	    if (!(g.getUsedCors()[ycor-1][xcor-1] instanceof Empty)){
-		System.out.println("Sorry, those coordinates have been used already.\n");
+		System.out.println("\nSorry, those coordinates have been used already.");
 		System.out.println("Please enter in a different set of coordinates.\n");
 		ask();
 	    }
@@ -279,8 +279,8 @@ public class Woo{
 	rules += "3. You will then be prompted to select x and y coordinates. Upon selecting them, your initial grid will be printed.\n"; 
 	rules += "4. When you catch a prey, you gain catch points and when you catch a predator you lose damage. \n";
 	rules += "5. When you catch an empty square, coordinates are printed: \n"; 
-	rules += "   The positive number signifies the amount of prey around. \n"; 
-	rules += "   The negative number signifies the number of predators around. \n"; 
+	rules += "   The positive number signifies the amount of prey in every square that is one unit away. \n"; 
+	rules += "   The negative number signifies the number of predators in every square that is one unit away. \n"; 
 	rules += "6. If you lose all damage points, you lose. If you catch all of the prey (a target number that is printed at various times during the game), you win. \n"; 
 	System.out.println(rules); 
 
