@@ -136,26 +136,76 @@ public class Grid {
       ====*/
     public static int populate(Grid s){
 	int numPrey = 0;
-	for (int i = 0; i < s.sideLength; i++) { 
-	    for (int j = 0; j < s.sideLength; j++) { 
-		int rand = (int) (Math.random()*10); 
-		if (rand == 0) {
-		    Animal a = new Prey();					
-		    s._grid[i][j] = a; 
+	int damage = 0;
+	int numAnimals = (int)(s.sideLength*s.sideLength*0.1);
+	int predCount = 0;
+	while (predCount <= numAnimals){
+		int rand1 = (int) (Math.random()*s.sideLength);
+		int rand2 = (int) (Math.random()*s.sideLength);
+		if (s._grid[rand1][rand2] instanceof Animal){}
+		else{
+			//if you reached half of the predator count...
+			if (predCount == (int)(numAnimals/2)){
+				//...and the damage is not 50 HP yet.
+				if (damage < 50){
+					//Call the overloaded constructor, granting the animal enough damage.
+					Animal a = new Predator(50-damage);
+					damage += ((Predator)a).getDamage();
+					s._grid[rand1][rand2] = a;
+					predCount ++;
+				}
+				else{
+					Animal d = new Predator();
+					s._grid[rand1][rand2] = d;
+					predCount ++;
+				}
+			}
+			//if you're on the last predator
+			else if (predCount == numAnimals){
+				//if there isn't enough cumulative damage to kill the Cazador (100 HP)
+				if (damage < 100){
+					Animal b = new Predator(100-damage);
+					s._grid[rand1][rand2] = b;
+					predCount ++;
+				}
+				else{
+					Animal c = new Predator();
+					s._grid[rand1][rand2] = c;
+					predCount ++;
+				}
+			}
+			else{
+				Animal e = new Predator();
+				damage += ((Predator)e).getDamage();
+				s._grid[rand1][rand2] = e;
+				predCount ++;
+			}
+		}
+	}
+	//Make sure there are enough prey as well.
+	while (numPrey <= numAnimals){
+		int rand1 = (int) (Math.random()*s.sideLength);
+		int rand2 = (int) (Math.random()*s.sideLength);
+		if (s._grid[rand1][rand2] instanceof Animal){}
+		else{
+			Animal f = new Prey();					
+		    s._grid[rand1][rand2] = f; 
 		    numPrey ++;
 		}
-		else if (rand == 1) { 
-		    Animal b = new Predator();
-		    s._grid[i][j] = b; 
+	}
+	//Populate the remaining squares with empties
+	for (int i = 0; i < s.sideLength; i++) { 
+	    for (int j = 0; j < s.sideLength; j++) { 
+			if (s._grid[i][j] instanceof Animal) {
+			}
+			else { 
+				Animal g = new Empty(i, j); 
+				s._grid [i][j] = g; 
+			}
 		}
-		else { 
-		    Animal c = new Empty(i, j); 
-		    s._grid [i][j] = c; 
-		}
-	    }
 	}
 	return numPrey;
-    }
+	}
 	
     //Populates the 2D Array with Used Coordinates with Empties
     public void initPopulateUsed(){

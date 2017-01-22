@@ -10,7 +10,7 @@ public class Woo{
     private BufferedReader in;
     int numPrey;
 	boolean exit;
-	String predators = "1. Bonnie the Bear: An unpredictable and cruel creature, she deals a random amount of damage based on how she's feeling.\n2. Zooey the Zebra: Don't be fooled by the fact that she's a vegetarian...she deals -30 damage. \n3. Jen the Jaguar: An angry and vicious beast, this cat deals -30 damage. \n4. Dasha the Dartfrog: Colorful, but also deadly: she deals -5 damage\n5. Masha the Mammoth: Back from extinction, she is here to mess up your life, and to deal -10 damage. \n6. Cody the Crocodile: Known for his strong jaws, with one bite, he deals -20 damage. \n7. Yiling the Yak: She deals -5 damage. 'Nuff said.\n";
+	String predators = "1. Bonnie the Bear: An unpredictable and cruel creature, she deals a random amount of damage based on how she's feeling.\n2. Zooey the Zebra: Don't be fooled by the fact that she's a vegetarian...she deals -30 damage. \n3. Jen the Jaguar: An angry and vicious beast, this cat deals -30 damage. \n4. Dasha the Dartfrog: Colorful, but also deadly: she deals -5 damage\n5. Masha the Mammoth: Back from extinction, she is here to mess up your life, and to deal -10 damage. \n6. Cody the Crocodile: Known for his strong jaws, with one bite, he deals -20 damage. \n7. Yiling the Yak: She deals -5 damage. 'Nuff said.\nNOTE: These damages are not set in stone! Sometimes, animals may deal more or less damage than specified...just watch out!\n";
 	String prey = "1. Rachel the Rabbit: Kind of an angry rabbit, the polar opposite of the Nesquik dude.\n2. Jessica the Jellyfish: Kind of ugly and faded, but jellyfish are still cool. \n3. Ida the Iguana: Green and scaly and does not belong in a dark, lightless, forest. \n4. Eugene the Egret: A kind of big, kind of small baby bird, but still vulnerable. \n5. Allard the Armadillo: Armadillos are super cool! Who doesn't want to save armadillos?? \n6. Patricia the Pangolin: An Allard knockoff, but still vulnerable to the evils of the forest. \n7. JennK the Jackrabbit: Also an angry rabbit. What's with rabbits and their emotions? Who hurt you??\n";
 	String notifs = "";
 	String rules = " ======================================  SOME BASIC RULES ===================================== \n\n\n1. You will first be prompted to input dimensions for the hunting ground.\n2. Then, once you read these directions, put in your name. Introduce yourself! \n3. You will then be prompted to select x and y coordinates. Upon selecting them, your initial grid will be printed.\n4. When you catch a prey, you gain catch points (CP) and when you catch a predator you lose health points (HP). \n5. When you explore an empty square, coordinates are printed: \n   The positive number signifies the amount of prey around. \n   The negative number signifies the number of predators around. \n6. If you lose all your HP, you lose. If you catch all of the prey (a target number that is printed at various times during the game), you win. \n7. At anytime during the game, you can type in certain commands to see certain stats. In order to view these commands, please type in 'help', when you are asked for an x or y coordinate.\n"; 
@@ -76,23 +76,22 @@ public class Woo{
 		}
 	}
 	//asks for the Cazador's name
-	s = "What is your name?";
+	s = "What is your name?\n";
 	System.out.println(s);
 	try {
 	    name = in.readLine();
 	}
 	catch ( IOException e ) { }
-	System.out.println("Hey Cazador " + name + "! You need to find " + numPrey + " prey to bring to safety. Go!");
+	System.out.println("Hey Cazador " + name + "! You need to find " + numPrey + " prey to bring to safety. Go!\n");
 	//KATS
 	kats = new Cazador( name );
-	System.out.println("Just an FYI: type in help, to receive commands for this game!");
+	System.out.println("Just an FYI: type in help, to receive commands for this game!\n");
     }//end newGame()
 	
     //When asking for coordinates from USER
     public int[] ask(){
 	int xcor = 0; 
 	int ycor = 0;
-	//String token = getNextToken();
 	System.out.println("Please choose an x-coordinate between 1 and " +  g.getSideLength() + ".");
 	//HOLMES
 	String holmes = "";
@@ -106,7 +105,6 @@ public class Woo{
 		xcor = Integer.parseInt(holmes.trim());
 	}
 	catch (Exception e){
-		System.out.println(holmes);
 		//If it isn't an integer, check to see if it is a command
 		checkCommands(holmes);
 		//If the user didn't choose to exit
@@ -342,6 +340,7 @@ public class Woo{
 		}
 		else{
 			System.out.println("Command not recognized.\n");
+			System.out.println("TYPE 'help' FOR LIST OF COMMANDS.\n");
 		}
 	}
 	
@@ -438,9 +437,10 @@ public class Woo{
 	str +=" |  `---.|      |       (_'  '--'\\  |  | |  ||        ||  | |  | |  '--'  /   `'  '-'  '|  |\\  \\ \n " ;
 	str +="`------'`------'          `-----'  `--' `--'`--------'`--' `--' `-------'      `-----' `--' '--'\n" ;
 	System.out.println(str);
-	str = "                       Project by Jennifer Yu, Eugene Thomas, Allard Peng";
+	str = "                       Project by Jennifer Yu, Eugene Thomas, Allard Peng\n";
 	System.out.println(str);
-	boolean wannaPlay = true; 
+	boolean wannaPlay = true;
+	//Mechanism for the USER to choose if he/she wants to play again after the game has ended.
 	while (wannaPlay){
 	int sideLength = 0;
 	boolean between = false;
@@ -457,12 +457,14 @@ public class Woo{
 	//BROWN 
 	Woo brown = new Woo(sideLength);
 	int[] i = new int[2];
+	//while the USER is still playing
 	while (brown.checkStatus() == 0){
 	    i = brown.ask();
 		if (brown.noExit()){
 			System.out.println(brown.g);
 			}
 		}
+	//if the USER won
 	if (brown.checkStatus() == 1){
 		System.out.println(((RealAnimals)(brown.g.getArray()[i[1]][i[0]])).getEnd());
 		System.out.println();
@@ -480,15 +482,19 @@ public class Woo{
 			}
 			}
 		}
+	//if the USER forced exited the game
 	else if (brown.checkStatus() == 2){
 		System.out.println("Laying on the ground, you close your eyes, turn off your flashlight, and wait for the darkness to consume you.");
+		wannaPlay = false;
 		}
+	//if the USER lost
 	else{
 		System.out.println(((RealAnimals)(brown.g.getArray()[i[1]][i[0]])).getEnd());
 		System.out.println();
 	    System.out.println("You lost!");
 		System.out.println("Press 1 to play again. Press 2 to cowardly wince away in terror.\n"); 
 	    boolean appliez = false; 
+		//Eugene WYD
 	    while (!appliez) { 
 	    int s; 
 	    s = Keyboard.readInt(); 
