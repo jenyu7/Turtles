@@ -9,6 +9,7 @@ public abstract class Animal {
 	protected String name; 
 	protected String story;
 	protected String susName;
+	protected String endStory;
 	
 	//Methods
 	public abstract String toString(); 

@@ -138,7 +138,7 @@ public class Grid {
 	int numPrey = 0;
 	for (int i = 0; i < s.sideLength; i++) { 
 	    for (int j = 0; j < s.sideLength; j++) { 
-		int rand = (int) (Math.random()*8); 
+		int rand = (int) (Math.random()*10); 
 		if (rand == 0) {
 		    Animal a = new Prey();					
 		    s._grid[i][j] = a; 

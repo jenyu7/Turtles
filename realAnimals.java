@@ -1,6 +1,6 @@
 //Implemented by Prey and Predator
 //Assures standardization
-public interface realAnimals{
+public interface RealAnimals{
 	//toString
 	String toString();
 	
@@ -10,4 +10,6 @@ public interface realAnimals{
 	//Gets the sus name
 	String getSusName();
 	
+	//Gets the ending story
+	String getEnd();
 }
