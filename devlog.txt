@@ -28,6 +28,8 @@ OBSTACLES OVERCOME
 
 - When creating commands, sometimes when an integer string was entered for an x and y coordinate, the program was unable to parse it and instead regarded it as a command. After extensive searching, found the .trim() method. Turns out, there was a space behind the coordinate, which was why the program was unable to parse, and had to resort to the catch block. 
 
+- In some cases, not enough predators with heavy enough damages were spawned in order to kill the Cazador. This created a situation where there was no way the player could lose the game. Fixed this by rewriting the populate method in Grid.java, where total damage inflicted by all predators must be at least 100 HP.
+
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - 
@@ -76,6 +78,13 @@ LESSONS LEARNED
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
 **Detailed Devlog begins 1/12. 
+
+01-22-17
+--------------------------------------------------------------
+JY: 
+- Wrote a new populate function for Grid.java that ensures enough predators are spawned to kill the Cazador
+- Changed spacing and design in Woo.java
+- Finished flowchart and UML diagrams. 
 
 01-21-17
 --------------------------------------------------------------
