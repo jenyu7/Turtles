@@ -275,13 +275,14 @@ public class Woo{
 	String rules = ""; 
 	rules += " ======================================  SOME BASIC RULES ===================================== \n"; 
 	rules += "\n\n1. You will first be prompted to input dimensions for the hunting ground.\n"; 
-	rules += "2. Then, once you read these directions, put in your name, which will be used to taunt you. \n"; 
+	rules += "2. Then, once you read these directions, put in your name. Introduce yourself! \n"; 
 	rules += "3. You will then be prompted to select x and y coordinates. Upon selecting them, your initial grid will be printed.\n"; 
-	rules += "4. When you catch a prey, you gain catch points and when you catch a predator you lose damage. \n";
-	rules += "5. When you catch an empty square, coordinates are printed: \n"; 
+	rules += "4. When you catch a prey, you gain catch points (CP) and when you catch a predator you lose health points (HP). \n";
+	rules += "5. When you explore an empty square, coordinates are printed: \n"; 
 	rules += "   The positive number signifies the amount of prey around. \n"; 
 	rules += "   The negative number signifies the number of predators around. \n"; 
-	rules += "6. If you lose all damage points, you lose. If you catch all of the prey (a target number that is printed at various times during the game), you win. \n"; 
+	rules += "6. If you lose all damage points, you lose. If you catch all of the prey (a target number that is printed at various times during the game), you win. \n";
+	rules += "7. At anytime during the game, you can type in certain commands to see certain stats. In order to view these commands, please type in 'help', when you are asked for an x or y coordinate."
 	System.out.println(rules); 
 
 	boolean wannaPlay = true; 
@@ -315,7 +316,10 @@ public class Woo{
 		System.out.println("Please pick 1 or 2...."); 
 		}
 	    else { if (t == 2) {wannaPlay = false; applies = true;}
-		else if (t == 1) {applies = true; System.out.println("\nPlaying again...\n\n");}}}}
+		else if (t == 1) {applies = true; System.out.println("\nPlaying again...\n\n");}
+			}
+			}
+		}
 	else{
 	    System.out.println("Surprise, surprise, you lost! I guess my swamp is too good for you.");
 	    System.out.println("Press 1 to play again. Press 2 to cowardly wince away in terror.\n"); 

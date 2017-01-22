@@ -10,10 +10,10 @@ public class Woo{
     private BufferedReader in;
     int numPrey;
 	boolean exit;
-	String predators = "1. Bonnie the Bear: An unpredictable and cruel creature, she deals a random amount of damage based on how she's feeling.\n2. Zooey the Zebra: Don't be fooled by the fact that she's a vegetarian...she deals -30 damage. \n3. Jen the Jaguar: An angry and vicious beast, this cat deals -30 damage. \n4. Dasha the Dartfrog: Colorful, but also deadly: she deals -5 damage\n5. Masha the Mammoth: Back from extinction, she is here to mess up your life, and to deal -10 damage. \n6. Cody the Crocodile: Known for his strong jaws, with one bite, he deals -20 damage. \n7. Yiling the Yak: She deals -5 damage. 'Nuff said.";
-	String prey = "1. Rachel the Rabbit: Kind of an angry rabbit, the polar opposite of the Nesquik dude.\n2. Jessica the Jellyfish: Kind of ugly and faded, but jellyfish are still cool. \n3. Ida the Iguana: Green and scaly and does not belong in a dark, lightless, forest. \n4. Eugene the Egret: A kind of big, kind of small baby bird, but still vulnerable. \n5. Allard the Armadillo: Armadillos are super cool! Who doesn't want to save armadillos?? \n6. Patricia the Pangolin: An Allard knockoff, but still vulnerable to the evils of the forest. \n7. JennK the Jackrabbit: Also an angry rabbit. What's with rabbits and their emotions? Who hurt you??";
+	String predators = "1. Bonnie the Bear: An unpredictable and cruel creature, she deals a random amount of damage based on how she's feeling.\n2. Zooey the Zebra: Don't be fooled by the fact that she's a vegetarian...she deals -30 damage. \n3. Jen the Jaguar: An angry and vicious beast, this cat deals -30 damage. \n4. Dasha the Dartfrog: Colorful, but also deadly: she deals -5 damage\n5. Masha the Mammoth: Back from extinction, she is here to mess up your life, and to deal -10 damage. \n6. Cody the Crocodile: Known for his strong jaws, with one bite, he deals -20 damage. \n7. Yiling the Yak: She deals -5 damage. 'Nuff said.\n";
+	String prey = "1. Rachel the Rabbit: Kind of an angry rabbit, the polar opposite of the Nesquik dude.\n2. Jessica the Jellyfish: Kind of ugly and faded, but jellyfish are still cool. \n3. Ida the Iguana: Green and scaly and does not belong in a dark, lightless, forest. \n4. Eugene the Egret: A kind of big, kind of small baby bird, but still vulnerable. \n5. Allard the Armadillo: Armadillos are super cool! Who doesn't want to save armadillos?? \n6. Patricia the Pangolin: An Allard knockoff, but still vulnerable to the evils of the forest. \n7. JennK the Jackrabbit: Also an angry rabbit. What's with rabbits and their emotions? Who hurt you??\n";
 	String notifs = "";
-	String instructions = "INSTRUCTIONS:\n1. Your objective in this game is to find all the prey, and transport them safely out of Borel Forest.\n2. As a Cazador (Hunter), you need to enter in coordinates to visit different parts of Borel Forest. Do not enter coordinates that are not within the boundaries of the forest (indicated by the numbers on the sides of the printed out grid), or coordinates you have already visited. \n3. In each coordinate of the forest, you can either encounter prey or predators. Prey, you catch; predators, they attack you. \n4. There are instances where there is nothing in the coordinate you entered. In this case, the box will reveal how many preys and predators are in your neighboring boxes, in the format '+<numberOfPrey>,-<numberOfPredators>'. \n5. If there are no predators or prey around you, then you will begin to 'roam' around to find squares with animals around them. In this instance, the neighboring square of the square with nothing in it will be opened. \n6. ";
+	String rules = " ======================================  SOME BASIC RULES ===================================== \n\n\n1. You will first be prompted to input dimensions for the hunting ground.\n2. Then, once you read these directions, put in your name. Introduce yourself! \n3. You will then be prompted to select x and y coordinates. Upon selecting them, your initial grid will be printed.\n4. When you catch a prey, you gain catch points (CP) and when you catch a predator you lose health points (HP). \n5. When you explore an empty square, coordinates are printed: \n   The positive number signifies the amount of prey around. \n   The negative number signifies the number of predators around. \n6. If you lose all your HP, you lose. If you catch all of the prey (a target number that is printed at various times during the game), you win. \n7. At anytime during the game, you can type in certain commands to see certain stats. In order to view these commands, please type in 'help', when you are asked for an x or y coordinate.\n"; 
 	
     //Constructor
     public Woo(int s){
@@ -29,8 +29,14 @@ public class Woo{
     public void newGame(){
 	//begin storyline
 	String s = "";
-	String name = "";
-	s += "EL CAZADOR\n";
+	String name = "\n";
+	System.out.println("EL CAZADOR\n");
+	System.out.println(rules);
+	System.out.println("Press enter to continue to the storyline.");
+	try{
+		in.readLine();
+	}
+	catch (IOException e){}
 	s += "Borel Forest is one of the most fearsome forests in the world. It is home to many a dangerous creature.\n";
 	s += "As a hunter, your name is a little misleading. You don't hunt for sport; rather, you are hoping to go into Borel forest and save certain animals from being eaten and wiped out by the predators in the forest.\n\n";
 	s += "Press enter to continue.";
@@ -79,12 +85,14 @@ public class Woo{
 	System.out.println("Hey Cazador " + name + "! You need to find " + numPrey + " prey to bring to safety. Go!");
 	//KATS
 	kats = new Cazador( name );
+	System.out.println("Just an FYI: type in help, to receive commands for this game!");
     }//end newGame()
 	
     //When asking for coordinates from USER
     public int[] ask(){
 	int xcor = 0; 
 	int ycor = 0;
+	//String token = getNextToken();
 	System.out.println("Please choose an x-coordinate between 1 and " +  g.getSideLength() + ".");
 	//HOLMES
 	String holmes = "";
@@ -94,9 +102,11 @@ public class Woo{
 	catch ( IOException e ) { }
 	//Checks to see if the input was an integer
 	try{
-		xcor = Integer.parseInt(holmes);
+		//this needs to be trimmed because if there is a space afterwards, the coordinate doesn't work. 
+		xcor = Integer.parseInt(holmes.trim());
 	}
 	catch (Exception e){
+		System.out.println(holmes);
 		//If it isn't an integer, check to see if it is a command
 		checkCommands(holmes);
 		//If the user didn't choose to exit
@@ -122,7 +132,7 @@ public class Woo{
 		}
 		catch ( IOException e ) { }
 		try{
-			ycor = Integer.parseInt(genkina);
+			ycor = Integer.parseInt(genkina.trim());
 			cont = true;
 		}
 		catch (Exception e){
@@ -281,13 +291,14 @@ public class Woo{
 			//COCOROS
 			String coco = "Commands in 'El Cazador'\n";
 			coco += "help -- displays the list of commands in the game.\n";
-			coco += "instructions -- displays the instructions of the game.\n";
+			coco += "rules -- displays the rules of the game.\n";
 			coco += "grid -- reprints the current grid in the game.\n";
 			coco += "catches -- displays the # of catches already made.\n";
 			coco += "health -- displays the current health.\n";
 			coco += "left -- displays the # of catches left. \n";
 			coco += "pred -- displays the descriptions of the predators. \n";
 			coco += "prey -- displays the descriptions of the prey. \n";
+			coco += "toggle -- change the current status of notifications. \n";
 			coco += "exit -- force exits the game. \n";
 			System.out.println(coco);
 		}
@@ -316,11 +327,21 @@ public class Woo{
 		else if (holmes.equals("grid")){
 			System.out.println(g);
 		}
-		else if (holmes.equals("instructions")){
-			System.out.println(instructions);
+		else if (holmes.equals("rules")){
+			System.out.println(rules);
+		}
+		else if (holmes.equals("toggle")){
+			if (notifs.equals("yes")){
+				notifs = "no";
+				System.out.println("Notifs turned off.");
+			}
+			else{
+				notifs = "yes";
+				System.out.println("Notifs turned on.");
+			}
 		}
 		else{
-			System.out.println("Command not recognized.");
+			System.out.println("Command not recognized.\n");
 		}
 	}
 	
@@ -419,6 +440,8 @@ public class Woo{
 	System.out.println(str);
 	str = "                       Project by Jennifer Yu, Eugene Thomas, Allard Peng";
 	System.out.println(str);
+	boolean wannaPlay = true; 
+	while (wannaPlay){
 	int sideLength = 0;
 	boolean between = false;
 	while (between == false){
@@ -444,6 +467,18 @@ public class Woo{
 		System.out.println(((RealAnimals)(brown.g.getArray()[i[1]][i[0]])).getEnd());
 		System.out.println();
 	    System.out.println("You won!");
+		System.out.println("Press 1 to play again. Press 2 to escape while you still can.\n"); 
+	    boolean applies = false; 
+	    while (!applies) { 
+	    int t; 
+	    t = Keyboard.readInt(); 
+	    if (t != 1 && t != 2) { 
+		System.out.println("Please pick 1 or 2...."); 
+		}
+	    else { if (t == 2) {wannaPlay = false; applies = true;}
+		else if (t == 1) {applies = true; System.out.println("\nPlaying again...\n\n");}
+			}
+			}
 		}
 	else if (brown.checkStatus() == 2){
 		System.out.println("Laying on the ground, you close your eyes, turn off your flashlight, and wait for the darkness to consume you.");
@@ -452,7 +487,17 @@ public class Woo{
 		System.out.println(((RealAnimals)(brown.g.getArray()[i[1]][i[0]])).getEnd());
 		System.out.println();
 	    System.out.println("You lost!");
-	}
+		System.out.println("Press 1 to play again. Press 2 to cowardly wince away in terror.\n"); 
+	    boolean appliez = false; 
+	    while (!appliez) { 
+	    int s; 
+	    s = Keyboard.readInt(); 
+	    if (s != 1 && s != 2) { 
+		System.out.println("Please pick 1 or 2...."); 
+		}
+	    else { if (s == 2) {wannaPlay = false; appliez = true;}
+		else if (s == 1) {appliez = true; System.out.println("\nPlaying again...\n\n");}}}
+	}}
 		
     }
 } 
