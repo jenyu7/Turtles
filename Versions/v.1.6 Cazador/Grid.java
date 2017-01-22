@@ -5,7 +5,6 @@ public class Grid {
     //Variable Declaration
     private Animal[][] _grid;
     private int sideLength;
-    private int[] coords; 
     private Object[][] _usedCors;
 	
     //Constructor
@@ -132,7 +131,6 @@ public class Grid {
       Predator: 1/5
       Prey: 1/5
       Empty: 3/5
-      [Eugene, please explain what coords does.]
       ====*/
     public static int populate(Grid s){
 	int numPrey = 0;

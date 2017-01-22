@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class Predator extends Animal implements RealAnimals{ 
 
 	//Declare Variables
-	public int damage; 
+	private int damage; 
 	
 	//Names and Stories
     ArrayList<String> names = new ArrayList<String>(7); { 
