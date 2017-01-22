@@ -276,7 +276,8 @@ public class Woo{
 	rules += " ======================================  SOME BASIC RULES ===================================== \n"; 
 	rules += "\n\n1. You will first be prompted to input dimensions for the hunting ground.\n"; 
 	rules += "2. Then, once you read these directions, put in your name, which will be used to taunt you. \n"; 
-	rules += "3. You will then be prompted to select x and y coordinates. Upon selecting them, your initial grid will be printed.\n"; 
+	rules += "3. You will then be prompted to select x and y coordinates. Upon selecting them, your initial grid will be printed.\n";
+	rules += "3.5. REMEMBER: The horizontal numbers are for the x coordinates and the vertical numbers are for the y coordinates.\n"; 
 	rules += "4. When you catch a prey, you gain catch points and when you catch a predator you lose damage. \n";
 	rules += "5. When you catch an empty square, coordinates are printed: \n"; 
 	rules += "   The positive number signifies the amount of prey in every square that is one unit away. \n"; 
