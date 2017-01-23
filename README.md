@@ -9,6 +9,9 @@
  |  `---.|      |       (_'  '--'\  |  | |  ||        ||  | |  | |  '--'  /   `'  '-'  '|  |\  \  
  `------'`------'          `-----'  `--' `--'`--------'`--' `--' `-------'      `-----' `--' '--' 
  </pre>
+ **Project by TURTLES, period 3** <br>
+ **Jennifer Yu, Eugene Thomas, Allard Peng** <br> 
+ :turtle::turtle::turtle:
  
 **Description:** 
   
@@ -16,23 +19,35 @@ El Cazador, spanish for "The Hunter", is a mashup of the two classic games Battl
    
 **Features:** 
 
-    MEET THE PREDATORS: 
-      - Jen the Jaguar
-      - Zoey the Zebra
-      - Bonnie the Bear
-      - Dasha the Dartfrog
-      - Masha the Mammoth
-      - Yiling the Yak
-      - Cody the Crocodile
-    
-    MEET THE PREY: 
-      - Ida the Iguana
-      - Rachel the Rabbit
-      - Jessica the Jellyfish
-      - Patricia the Pangolin
-      - Eugene the Egret
-      - Allard the Armadillo
-      - JennK the Jackrabbit
+MEET THE PREDATORS: 
+- Jen the Jaguar :leopard:
+- Zoey the Zebra:sun_with_face:
+- Bonnie the Bear:bear:
+- Dasha the Dartfrog:frog:
+- Masha the Mammoth:elephant:
+- Yiling the Yak:ox:
+- Cody the Crocodile:crocodile:
+
+MEET THE PREY: 
+- Ida the Iguana:dragon_face:
+- Rachel the Rabbit:rabbit:
+- Jessica the Jellyfish:information_desk_person:
+- Patricia the Pangolin:punch:
+- Eugene the Egret:baby_chick:
+- Allard the Armadillo:sun_with_face:
+- JennK the Jackrabbit:rabbit:
+
+COMMANDS WITHIN THE GAME: 
+- help -- displays the list of commands in the game.
+- rules -- displays the rules of the game.
+- grid -- reprints the current grid in the game.
+- catches -- displays the # of catches already made.
+- health -- displays the current health.
+- left -- displays the # of catches left.
+- pred -- displays the descriptions of the predators.
+- prey -- displays the descriptions of the prey.
+- toggle -- change the current status of notifications.
+- exit -- force exits the game.
 
 
 **Launch Instructions and Gameplay:** 
