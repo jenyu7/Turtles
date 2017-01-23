@@ -11,23 +11,14 @@ El Cazador
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - There were issues with methods being static and nonstatic, which were fixed by instantiation.
- 
 - At first, we were unclear on our vision of how to code the driver. Using a Grid object was a given, but what we mainly debated over was the usage of an object vs. a 2D Array in order to represent the empty spaces in the Grid. In the end, we settled on the object, because it was easier to assign attributes, instance variables, and use instaceOf to determine what it was. 
-
 - What should be in an MVP? We discussed this, about what aspects were necessary and what weren't. In the end, we decided that the physical Grid parts and the parts where empty squares with no predators/prey around them were not necessary towards functionality, and were best wrangled with later.
- 
 - Arguments about superclasses vs. interfaces. In the end, we decided to use the Animal superclass and not define each individual animal in a class, but rather spawn either a Predator or a Prey. Both Predator and Prey are subclasses of Animal, so when the driver is run and the grid is created, one variable type takes care of both of these objects. 
-
 - Time Management. Early on, we split up the work, but some of the kinks hadn't been worked out yet, so we fell a little behind. However. this project in its MVP version should work fine. 
-
 - Was criticized by Konstatinovich for having a public variable. Made all variables either private or protected out of shame. In order to retain access, wrote Accessor and Mutator methods. [Jen]
-
 - Could not access some mutators and accessors. Fixed by TYPECASTING!! 
-
 - There was a big bug where if you were to hit upon a square with nothing around it, and it too had squares surrounding it that had nothing around them, then the program would launch into an enormous forever loop. I [Jen] was in charge of diagnosing and fixing this bug (it's within the code I wrote, after all) and eventually, I realized that first, as mentioned above, it would only go into the forever loop in the case that the square with nothing around it also had squares around it with nothing around it. If the square with nothing around it had surrounding squares that all had predators and prey around them, then the program would run fine. What I also discovered was that the program would keep checking the same coordinates over and over again. Why? Because when I invoked checkGrid() [checks the grid at a certain coordinate for the stuff around it] on the surrounding squares, I DIDN'T ADD THESE SQUARES TO MY ARRAY OF USED COORDINATES. I only added in used when I asked the user for them; I didn't realize I had to add them in when the progrma decided to check squares by itself. So I just made sure the coordinates hadn't already been visited, and if they hadn't, then to invoke checkGrid() on those coordinates. This way, there wasn't the constant yo-yoing of checking coordinates with nothing around them; they would've already been established as surrounded by empty squares. 
-
 - When creating commands, sometimes when an integer string was entered for an x and y coordinate, the program was unable to parse it and instead regarded it as a command. After extensive searching, found the .trim() method. Turns out, there was a space behind the coordinate, which was why the program was unable to parse, and had to resort to the catch block. 
-
 - In some cases, not enough predators with heavy enough damages were spawned in order to kill the Cazador. This created a situation where there was no way the player could lose the game. Fixed this by rewriting the populate method in Grid.java, where total damage inflicted by all predators must be at least 100 HP.
 
 UNRESOLVED ISSUES
@@ -37,9 +28,7 @@ UNRESOLVED ISSUES
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - 2D Arrays are annoying, but we ended up using a lot of it. 
-
 - How to use the Scanner class (sort of). Better understanding gained of try and catch blocks!
-
 - Better understanding of private vs. public; wrote accessors and mutators in order to modify private variables
 
 
@@ -47,17 +36,11 @@ MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Changed from empty square to the "ghost" concept, back to creating an array storing # of predators/prey around a box
   - ANDDD changed back to the object, now named Empty
-
 - For nice grid display, changed the names of the animals into 5 letter formats.
-
 - If there were only predators or only prey nearby, the quantity of the other would still be displayed. To clarify, if there were 2 predators around a square, but no prey around, the square would display "+0,-2", which was different from planned; before, it was planned to just have displayed "-2". This was to make the grid look nicer and not incorporate as much string manipulation. 
-
 - Squares with nothing surround them display "+0,-0", which was different from planned. The planned version didn't touch specifically on what these squares would display, but not that LOL
-
 - Commands! Originally a stretch...but it was done. 
-
 - Exit early option, and playing the game again. These options were added mid-development in order to create a more user friendly game. 
-
 - Toggle option; added an option for users to be able to see where they roamed when there was nothing near them, or to turn it off if they didn't like the excessive printing. 
 
 
