@@ -1,6 +1,6 @@
 //Implemented by Prey and Predator
 //Assures standardization
-public interface realAnimals{
+public interface RealAnimals{
 	//toString
 	String toString();
 	

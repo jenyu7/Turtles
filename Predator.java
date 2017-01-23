@@ -1,5 +1,5 @@
 import java.util.ArrayList; 
-public class Predator extends Animal implements realAnimals{ 
+public class Predator extends Animal implements RealAnimals{ 
 
 	//Declare Variables
 	private int damage; 

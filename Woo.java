@@ -466,7 +466,7 @@ public class Woo{
 		}
 	//if the USER won
 	if (brown.checkStatus() == 1){
-		System.out.println(((realAnimals)(brown.g.getArray()[i[1]][i[0]])).getEnd());
+		System.out.println(((RealAnimals)(brown.g.getArray()[i[1]][i[0]])).getEnd());
 		System.out.println();
 	    System.out.println("You won!");
 		System.out.println("Press 1 to play again. Press 2 to escape while you still can.\n"); 
@@ -489,7 +489,7 @@ public class Woo{
 		}
 	//if the USER lost
 	else{
-		System.out.println(((realAnimals)(brown.g.getArray()[i[1]][i[0]])).getEnd());
+		System.out.println(((RealAnimals)(brown.g.getArray()[i[1]][i[0]])).getEnd());
 		System.out.println();
 	    System.out.println("You lost!");
 		System.out.println("Press 1 to play again. Press 2 to cowardly wince away in terror.\n"); 
