@@ -32,14 +32,16 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- 
 
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - 2D Arrays are annoying, but we ended up using a lot of it. 
 
-- How to use the Scanner class (sort of). Better understanding gained of try and catch blocks! 
+- How to use the Scanner class (sort of). Better understanding gained of try and catch blocks!
+
+- Better understanding of private vs. public; wrote accessors and mutators in order to modify private variables
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,6 +69,8 @@ LESSONS LEARNED
 - When there is no bug: Love for CS > 100
   When there is a bug: Love for CS < 0
   When you fixed a bug: Love for CS >>>>> 9000
+- if (didNotPullBeforeYouPushed() == true){boolean sadLife = true;}
+- There's a lot of problems to account for that you only realize once you begin to code...
 
 
  ______   ______   __   __   __       ______   _______
@@ -81,6 +85,9 @@ LESSONS LEARNED
 
 01-22-17
 --------------------------------------------------------------
+ET: 
+- Edited descriptions for Patricia and Jessica
+
 JY: 
 - Wrote a new populate function for Grid.java that ensures enough predators are spawned to kill the Cazador
 - Changed spacing and design in Woo.java
